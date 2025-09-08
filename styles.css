@@ -57,7 +57,7 @@ header {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 .logo-container { display: flex; justify-content: center; margin-bottom: 5px; }
-.logo-container img { height: 40px; width: auto; }
+.logo-container img { height: 110px; width: auto; }
 header h1 { margin: 5px 0 10px 0; font-size: 1.8em; font-weight: normal; color: #fff; }
 nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 5px 15px; }
 nav ul li { margin: 0; }
