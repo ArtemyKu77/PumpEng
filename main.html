@@ -1,147 +1,204 @@
 <!-- main.html -->
 
-<!-- СЕКЦИЯ INTRO С ИСПРАВЛЕННЫМ ЗАГОЛОВКОМ -->
-<section class="transparent-section no-frame">
-    <div class="intro">
-        <div class="intro-text">
-            <!-- ИЗМЕНЕНИЕ: Добавлен тег <br> для переноса строки -->
-            <h2>Ваш персональный путь к английскому для<br><span class="typing-effect"></span></h2>
-            <p style="font-size: 1.1em; margin-bottom: 25px;">Подбираем программу и преподавателя под ваши цели, чтобы вы получили результат, а не просто "прошли курс".</p>
-            <a href="https://forms.gle/2wo5KMXdqD9CzpwE9" class="sign-up-button">Пройти пробный урок</a>
-            <p class="social-proof">✓ Присоединяйтесь к 500+ успешным студентам</p>
-        </div>
-    </div>
-</section>
+<!-- НОВАЯ ШАПКА -->
+<header class="new-header new-container">
+    <a href="#" class="new-logo">PumpEng.</a>
+    <nav class="new-nav">
+        <!-- Ссылка на форму записи -->
+        <a href="https://forms.gle/2wo5KMXdqD9CzpwE9" class="new-signup-btn">Записаться</a>
+        <div class="hamburger-menu">☰</div>
+    </nav>
+</header>
 
-<!-- ОБНОВЛЕННАЯ СЕКЦИЯ ПРЕИМУЩЕСТВ -->
-<section id="advantages">
-    <h2>Почему выбирают PumpEng</h2>
-    <div class="advantages-container">
-        <div class="advantage-block reveal-on-scroll" data-delay="0s">
-            <i class="fas fa-comments"></i>
-            <h3>Говорите, а не зубрите</h3>
-            <p>80% урока — это разговорная практика. Вы начнете применять знания с первого же занятия.</p>
+<main>
+    <!-- СЕКЦИЯ HERO -->
+    <section class="hero-section new-container">
+        <h1 class="hero-title">
+            Добро Пожаловать <br> В <span class="gradient-text">PumpEng</span>
+        </h1>
+        <div class="hero-image-wrapper">
+            <!-- Замените "hero-office.jpg" на ваше изображение -->
+            <img src="images/hero-office.jpg" alt="Современный офис PumpEng">
+            <a href="#intro-text" class="scroll-down-btn">↓</a>
         </div>
-        <div class="advantage-block reveal-on-scroll" data-delay="0.1s">
-            <i class="fas fa-user-check"></i>
-            <h3>Программа, созданная для Вас</h3>
-            <p>Мы не работаем по единому шаблону. Адаптируем курс под ваши цели, интересы и темп.</p>
-        </div>
-        <div class="advantage-block reveal-on-scroll" data-delay="0.2s">
-            <i class="fas fa-users"></i>
-            <h3>Учителя, которые вдохновляют</h3>
-            <p>Наши преподаватели — не просто эксперты, а ваши наставники на пути к цели.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- НОВАЯ СЕКЦИЯ "КАК ПРОХОДЯТ ЗАНЯТИЯ" -->
-<section id="process">
-    <h2>Как мы приведем вас к результату</h2>
-    <div class="process-container">
-        <div class="process-step reveal-on-scroll" data-delay="0s">
-            <div class="process-icon"><i class="fas fa-file-signature"></i></div>
-            <h3>1. Заявка и знакомство</h3>
-            <p>Вы оставляете заявку, мы связываемся для уточнения целей и подбора идеального преподавателя.</p>
-        </div>
-        <div class="process-step reveal-on-scroll" data-delay="0.1s">
-            <div class="process-icon"><i class="fas fa-calendar-check"></i></div>
-            <h3>2. Пробный урок</h3>
-            <p>Вы знакомитесь с учителем на бесплатном 30-минутном занятии, где мы точно определяем ваш уровень.</p>
-        </div>
-        <div class="process-step reveal-on-scroll" data-delay="0.2s">
-            <div class="process-icon"><i class="fas fa-rocket"></i></div>
-            <h3>3. Начало обучения</h3>
-            <p>Вы начинаете заниматься по персональной программе в удобное для вас время и достигаете своих целей.</p>
-        </div>
-    </div>
-</section>
+    <!-- СЕКЦИЯ INTRO TEXT -->
+    <section class="intro-text-section new-container" id="intro-text">
+        <h3>Будущий участник команды</h3>
+        <p>PumpEng – первая в СНГ система языкового коучинга, которая строит не словарный запас, а ваше мышление и статус. Мы помогаем лидерам и экспертам звучать убедительно на языке глобального бизнеса.</p>
+    </section>
 
-<!-- НОВАЯ СЕКЦИЯ С АНИМИРОВАННЫМИ ЦИФРАМИ -->
-<section id="stats">
-    <div class="stats-container">
-        <div class="stat-item">
-            <span class="stat-number" data-goal="500">0</span>+
-            <p>Счастливых студентов</p>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number" data-goal="95">0</span>%
-            <p>Положительных отзывов</p>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number" data-goal="5">0</span>
-            <p>Опытных преподавателей</p>
-        </div>
-    </div>
-</section>
-
-<!-- СЕКЦИЯ КУРСОВ -->
-<section id="courses-preview">
-    <h2>Выберите свой курс</h2>
-    <p class="section-subtitle">Мы предлагаем программы для любых целей. Вот самые популярные из них:</p>
-    <div class="course-cards-container">
-        <div class="course-overview-card theme-business">
-            <i class="fas fa-briefcase card-icon"></i>
-            <h3>Деловой английский</h3>
-            <p class="card-subtitle">Для карьеры и бизнеса</p>
-            <p class="card-description">Уверенное ведение переговоров, презентаций и деловой переписки с зарубежными партнерами.</p>
-            <a href="business-english.html" class="course-overview-button">Подробнее</a>
-        </div>
-        <div class="course-overview-card theme-ielts">
-            <i class="fas fa-graduation-cap card-icon"></i>
-            <h3>Подготовка к IELTS</h3>
-            <p class="card-subtitle">Для учебы и иммиграции</p>
-            <p class="card-description">Комплексная проработка всех частей экзамена для достижения максимального балла.</p>
-            <a href="ielts-preparation.html" class="course-overview-button">Подробнее</a>
-        </div>
-        <div class="course-overview-card theme-speaking">
-            <i class="fas fa-users card-icon"></i>
-            <h3>Разговорный клуб</h3>
-            <p class="card-subtitle">Для свободного общения</p>
-            <p class="card-description">Преодоление языкового барьера и практика живой речи на актуальные темы.</p>
-            <a href="speaking-club.html" class="course-overview-button">Подробнее</a>
-        </div>
-    </div>
-    <div style="text-align: center; margin-top: 40px;">
-        <a href="courses-overview.html" class="sign-up-button" style="background-color: #0056b3; border-color: #0056b3;">Смотреть все курсы</a>
-    </div>
-</section>
-
-<!-- СЕКЦИЯ ОТЗЫВОВ -->
-<section id="reviews">
-    <h2>Нам доверяют</h2>
-    <div class="reviews-grid-container">
-        <div class="review-card">
-            <div class="review-author">
-                <i class="fas fa-user-circle author-icon"></i>
-                <span class="author-name">Анна Петрова</span>
+    <!-- СЕКЦИЯ СТАТИСТИКИ -->
+    <section class="stats-section">
+        <div class="stats-container new-container">
+            <div class="stats-title">
+                На нас <span class="highlight">Можно</span> Положиться
             </div>
-            <div class="review-stars">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <div class="stats-data">
+                <div class="stat-item">
+                    <!-- Атрибуты для работы JS-счетчика -->
+                    <span class="number stat-number" data-goal="500">+0</span>
+                    <span class="label">Счастливых студентов закончили у нас</span>
+                </div>
+                <div class="stat-item">
+                    <span class="number stat-number" data-goal="95">0</span>%
+                    <span class="label">Положительных отзывов от наших учеников</span>
+                </div>
+                <div class="stat-item">
+                    <span class="number stat-number" data-goal="5">0</span>
+                    <span class="label">Опытных преподавателей в нашей школе</span>
+                </div>
             </div>
-            <p class="review-text">"Быстро увидела прогресс в рабочих переговорах. Удобный формат и преподаватели, которые действительно слышат твои цели!"</p>
-            <p class="review-course-taken">Курс: Деловой английский</p>
         </div>
-        <div class="review-card">
-            <div class="review-author">
-                <i class="fas fa-user-circle author-icon"></i>
-                <span class="author-name">Сергей Ковалев</span>
+    </section>
+    
+    <!-- СЕКЦИЯ СПИСКА КУРСОВ -->
+    <section class="courses-list-section new-container">
+        <h2 class="section-title">БОЛЬШЕ КУРСОВ</h2>
+        <p class="section-subtitle">Найдите идеальную программу для достижения ваших целей в изучении английского языка. Мы предлагаем курсы для всех уровней и потребностей.</p>
+        
+        <!-- Курс 1 -->
+        <div class="course-item">
+            <div class="course-image"><a href="business-english.html" class="arrow-btn">→</a></div>
+            <div class="course-details">
+                <h3>Деловой английский</h3>
+                <p>Для тех, кто хочет свободно общаться в бизнес-среде, вести проекты и выходить на международный уровень.</p>
+                <div class="course-buttons">
+                    <a href="business-english.html" class="course-btn secondary">Уверенность на переговорах</a>
+                    <a href="business-english.html" class="course-btn primary">Подробнее о курсе</a>
+                </div>
             </div>
-            <div class="review-stars">
-                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p class="review-text">"Индивидуальный подход действительно работает. Теперь чувствую себя гораздо увереннее в поездках и общении с иностранцами."</p>
-            <p class="review-course-taken">Курс: Разговорный английский</p>
         </div>
-    </div>
-    <div style="text-align: center; margin-top: 30px;">
-        <a href="reviews.html" class="sign-up-button" style="background-color: #0056b3; border-color:#0056b3;">Читать все отзывы</a>
-    </div>
-</section>
+        <!-- Курс 2 -->
+        <div class="course-item">
+            <div class="course-image"><a href="ielts-preparation.html" class="arrow-btn">→</a></div>
+            <div class="course-details">
+                <h3>Подготовка к IELTS</h3>
+                <p>Комплексная проработка всех частей экзамена для достижения максимального балла для учебы или иммиграции.</p>
+                <div class="course-buttons">
+                    <a href="ielts-preparation.html" class="course-btn secondary">Высокий балл на экзамене</a>
+                    <a href="ielts-preparation.html" class="course-btn primary">Подробнее о курсе</a>
+                </div>
+            </div>
+        </div>
+        <!-- Курс 3 -->
+        <div class="course-item">
+             <div class="course-image"><a href="speaking-club.html" class="arrow-btn">→</a></div>
+            <div class="course-details">
+                <h3>Разговорный клуб</h3>
+                <p>Преодолейте языковой барьер и начните свободно говорить на любые темы в компании единомышленников.</p>
+                <div class="course-buttons">
+                    <a href="speaking-club.html" class="course-btn secondary">Свободное общение</a>
+                    <a href="speaking-club.html" class="course-btn primary">Подробнее о курсе</a>
+                </div>
+            </div>
+        </div>
+        <!-- Курс 4 -->
+        <div class="course-item">
+            <div class="course-image"><a href="courses-overview.html" class="arrow-btn">→</a></div>
+            <div class="course-details">
+                <h3>Общие курсы (A1-C1)</h3>
+                <p>Систематическое изучение английского языка от начального до продвинутого уровня по международной системе CEFR.</p>
+                <div class="course-buttons">
+                    <a href="courses-overview.html" class="course-btn secondary">Все уровни английского</a>
+                    <a href="courses-overview.html" class="course-btn primary">Смотреть все курсы</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ФИНАЛЬНАЯ СЕКЦИЯ "ЗАПИСЬ НА УРОК" -->
-<section id="sign-up">
-    <h2>Готовы начать?</h2>
-    <p>Запишитесь на бесплатное пробное занятие, и мы поможем определить ваш уровень и подобрать идеальную программу!</p>
-    <a href="https://forms.gle/2wo5KMXdqD9CzpwE9" class="sign-up-button">Хочу пробный урок</a>
-</section>
+    <!-- СЕКЦИЯ ОТЗЫВОВ -->
+    <section class="testimonials-section new-container">
+        <h2 class="section-title" style="text-align: center;">Что наши клиенты говорят о нас!</h2>
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <!-- Отзыв 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Отличные преподаватели и удобный формат занятий! Быстро увидела прогресс в разговорном английском. Рекомендую PumpEng всем, кто хочет действительно выучить язык!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <span class="author-name">Анна П.</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Отзыв 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Индивидуальный подход действительно работает. Преподаватель учел все мои цели и помог подготовиться к собеседованию на английском. Спасибо PumpEng!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <span class="author-name">Сергей К.</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Отзыв 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Очень понравился разговорный клуб! Наконец-то начала говорить свободнее и перестала бояться делать ошибки. Атмосфера дружелюбная, темы для обсуждения всегда интересные."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <span class="author-name">Елена В.</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Добавьте больше отзывов, скопировав блок .testimonial-card -->
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-arrow" id="prev-slide">←</button>
+            <button class="slider-arrow" id="next-slide">→</button>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ КОМАНДЫ -->
+    <section class="team-section">
+        <div class="team-container new-container">
+            <div class="team-description">
+                Команда нашей школы это не просто учителя, а настоящие эксперты в обучении английскому. Каждый из них обладает высокой квалификацией, международным опытом и постоянно совершенствует свои навыки.
+            </div>
+            <div class="team-grid">
+                <div class="team-member"><div class="team-photo"></div><div class="name">Jocelyn Schleifer</div><div class="role">Managing Director</div></div>
+                <div class="team-member"><div class="team-photo"></div><div class="name">Jocelyn Schleifer</div><div class="role">Managing Director</div></div>
+                <div class="team-member"><div class="team-photo"></div><div class="name">Jocelyn Schleifer</div><div class="role">Managing Director</div></div>
+                <div class="team-member"><div class="team-photo"></div><div class="name">Jocelyn Schleifer</div><div class="role">Managing Director</div></div>
+                <div class="team-member"><div class="team-photo"></div><div class="name">Jocelyn Schleifer</div><div class="role">Managing Director</div></div>
+                <div class="team-member"><div class="team-photo"></div><div class="name">Jocelyn Schleifer</div><div class="role">Managing Director</div></div>
+            </div>
+        </div>
+        <div class="new-container">
+            <a href="#" class="view-all-btn">Посмотреть всех участников →</a>
+        </div>
+    </section>
+
+    <!-- ФИНАЛЬНАЯ СЕКЦИЯ CTA И ПОДВАЛ -->
+    <section class="final-cta-section">
+        <div class="cta-container new-container">
+            <h2 class="cta-title">Хотите начать курс?</h2>
+            <div class="cta-right">
+                <a href="https://forms.gle/2wo5KMXdqD9CzpwE9" class="cta-button">
+                    <span>Оставь заявку</span>
+                    <span>→</span>
+                </a>
+                <div class="social-links-final">
+                    <a href="#">Instagram</a>
+                    <a href="#">TikTok</a>
+                    <a href="#">Telegram</a>
+                </div>
+            </div>
+        </div>
+        <footer class="new-footer new-container">
+            <div class="footer-content">
+                <span class="copyright">© 2025 PumpEng. All rights reserved</span>
+                <nav class="footer-nav">
+                    <a href="index.html">Домой</a>
+                    <a href="courses-overview.html">Курсы</a>
+                    <a href="reviews.html">Отзывы</a>
+                    <a href="resources.html">Ресурсы</a>
+                    <a href="tests.html">Тесты</a>
+                </nav>
+            </div>
+        </footer>
+    </section>
+</main>
