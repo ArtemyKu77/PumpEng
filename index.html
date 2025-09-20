@@ -1,37 +1,40 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PumpEng - Эффективные Курсы Английского Языка Онлайн</title>
-    <meta name="description" content="PumpEng предлагает курсы английского языка для всех уровней: от начинающих до продвинутых, деловой английский, подготовка к IELTS. Индивидуальный подход. Записывайтесь!">
-    
-    <!-- ИСХОДНЫЙ ФАЙЛ СТИЛЕЙ -->
+    <title>PumpEng - Языковой коучинг для лидеров и экспертов</title>
+    <meta name="description" content="PumpEng - первая в СНГ система языкового коучинга, которая строит не словарный запас, а ваше мышление и статус. Помогаем лидерам и экспертам звучать убедительно.">
+
+    <!-- Старые стили для внутренних страниц -->
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- ========================================================== -->
-    <!--      ВОТ КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ: ПОДКЛЮЧАЕМ НЕДОСТАЮЩИЕ СТИЛИ -->
     <link rel="stylesheet" href="courses-overview-styles.css">
     <link rel="stylesheet" href="reviews-styles.css">
-    <!-- ========================================================== -->
-    
+
+    <!-- !!! НОВЫЙ ФАЙЛ СТИЛЕЙ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ !!! -->
+    <link rel="stylesheet" href="new-main-page.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <header>
-        <!-- Шапка будет загружена здесь скриптом -->
+<!-- !!! Добавлен класс new-design для применения новых стилей !!! -->
+<body class="new-design">
+    
+    <!-- Старая структура шапки и подвала остается для совместимости с внутренними страницами, но на главной она будет заменена -->
+    <header style="display: none;">
+        <!-- Пусто, так как новая шапка будет в main.html -->
     </header>
 
     <div id="main-content">
         <!-- Основной контент главной страницы будет загружен сюда из main.html -->
     </div>
 
-    <footer>
-        <!-- Подвал будет загружен здесь скриптом -->
+    <footer style="display: none;">
+        <!-- Пусто, так как новый подвал будет в main.html -->
     </footer>
 
     <script>
-        // Скрипт для загрузки ТОЛЬКО основного контента для index.html
+        // Этот скрипт загружает main.html
         async function loadMainContent() {
             try {
                 const response = await fetch('main.html');
@@ -40,19 +43,11 @@
                 const mainContentElement = document.querySelector('#main-content');
                 if (mainContentElement) {
                     mainContentElement.innerHTML = html;
-                    // Этот observer теперь в script.js, здесь вызов не нужен
-                } else {
-                    console.error('Element with id "main-content" not found.');
                 }
             } catch (error) {
                 console.error('Error loading main content:', error);
-                const mainContentElement = document.querySelector('#main-content');
-                 if (mainContentElement) {
-                    mainContentElement.innerHTML = '<p style="color: red; text-align: center; padding: 20px;">Не удалось загрузить основное содержимое.</p>';
-                 }
             }
         }
-        
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', loadMainContent);
         } else {
@@ -60,11 +55,10 @@
         }
     </script>
     
-    <!-- Кнопка Наверх -->
+    <!-- Кнопка "Наверх" и основной скрипт остаются -->
     <button id="scrollToTopBtn" title="Наверх">
         <i class="fas fa-arrow-up"></i>
     </button>
-
     <script src="script.js"></script>
 </body>
 </html>
