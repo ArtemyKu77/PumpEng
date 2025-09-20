@@ -1,11 +1,11 @@
 // script.js
 
-// === БЛОК 1: ЗАГРУЗКА КОМПОНЕНТОВ (HEADER, FOOTER) ===
+// === БЛОК 1: ЗАГРУЗКА КОМПОНЕНТОВ ДЛЯ ВНУТРЕННИХ СТРАНИЦ ===
 async function loadComponent(elementSelector, filePath) {
     try {
         const response = await fetch(filePath);
         if (!response.ok) {
-            if (response.status === 404) return; // Просто выходим, если файл не найден
+            if (response.status === 404) return;
             throw new Error(`Could not fetch ${filePath}: ${response.statusText}`);
         }
         const html = await response.text();
@@ -17,76 +17,29 @@ async function loadComponent(elementSelector, filePath) {
 }
 
 function initializeComponents() {
-    loadComponent('header', 'header.html');
-    loadComponent('footer', 'footer.html');
+    // Не загружаем компоненты, если мы на новой главной странице
+    if (!document.body.classList.contains('new-design')) {
+        loadComponent('header', 'header.html');
+        loadComponent('footer', 'footer.html');
+    }
 }
 
 // === БЛОК 2: ЛОГИКА КНОПКИ "НАВЕРХ" ===
-let scrollTopButton = document.getElementById("scrollToTopBtn");
+function setupScrollToTop() {
+    const scrollTopButton = document.getElementById("scrollToTopBtn");
+    if (!scrollTopButton) return;
 
-function scrollFunction() {
-    scrollTopButton = document.getElementById("scrollToTopBtn");
-    if (scrollTopButton) {
+    window.onscroll = () => {
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
             scrollTopButton.style.display = "block";
         } else {
             scrollTopButton.style.display = "none";
         }
-    }
+    };
+    scrollTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
-function setupScrollToTop() {
-    scrollTopButton = document.getElementById("scrollToTopBtn");
-    if (scrollTopButton) {
-        scrollTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-        window.onscroll = scrollFunction;
-    }
-}
-
-// === БЛОК 3: НОВЫЕ ИНТЕРАКТИВНЫЕ ФУНКЦИИ ===
-
-// Функция для эффекта "печатающейся машинки"
-function startTypingEffect() {
-    const typingElement = document.querySelector('.typing-effect');
-    if (!typingElement) return;
-
-    const words = ['карьеры', 'путешествий', 'общения'];
-    let wordIndex = 0;
-    let letterIndex = 0;
-    let isDeleting = false;
-
-    function type() {
-        const currentWord = words[wordIndex];
-        let displayText = '';
-
-        if (isDeleting) {
-            displayText = currentWord.substring(0, letterIndex - 1);
-            letterIndex--;
-        } else {
-            displayText = currentWord.substring(0, letterIndex + 1);
-            letterIndex++;
-        }
-
-        typingElement.textContent = displayText;
-
-        let typeSpeed = 150;
-        if (isDeleting) {
-            typeSpeed /= 2;
-        }
-
-        if (!isDeleting && letterIndex === currentWord.length) {
-            typeSpeed = 2000;
-            isDeleting = true;
-        } else if (isDeleting && letterIndex === 0) {
-            isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-            typeSpeed = 500;
-        }
-
-        setTimeout(type, typeSpeed);
-    }
-    type();
-}
+// === БЛОК 3: НОВЫЕ ИНТЕРАКТИВНЫЕ ФУНКЦИИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ ===
 
 // Функция для анимации счетчика
 function startCounterAnimation(entries, observer) {
@@ -95,8 +48,7 @@ function startCounterAnimation(entries, observer) {
             const counters = document.querySelectorAll('.stat-number');
             counters.forEach(counter => {
                 const goal = +counter.getAttribute('data-goal');
-                counter.textContent = '0'; // Сброс на 0 перед анимацией
-
+                counter.textContent = '0';
                 let current = 0;
                 const increment = Math.ceil(goal / 100);
 
@@ -115,36 +67,43 @@ function startCounterAnimation(entries, observer) {
     });
 }
 
-// Функция для анимации появления блоков при скролле
-function setupScrollAnimation() {
-    const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
-    if (!elementsToReveal.length) return;
+// НОВЫЙ СЛАЙДЕР ДЛЯ ОТЗЫВОВ
+function setupTestimonialsSlider() {
+    const wrapper = document.querySelector('.slider-wrapper');
+    const prevBtn = document.getElementById('prev-slide');
+    const nextBtn = document.getElementById('next-slide');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const delay = entry.target.dataset.delay || '0s';
-                entry.target.style.animation = `fadeInUp 0.8s ease-out forwards ${delay}`;
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
+    if (!wrapper || !prevBtn || !nextBtn) return;
 
-    elementsToReveal.forEach(el => observer.observe(el));
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.testimonial-card');
+    const slideWidth = slides[0].offsetWidth;
+
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < slides.length - 3) { // Показываем по 3 слайда
+            currentIndex++;
+            wrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            wrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+    });
 }
 
 // === БЛОК 4: ИНИЦИАЛИЗАЦИЯ ВСЕХ ФУНКЦИЙ ===
-
-// Функция, которая запускает все скрипты для основной страницы
 function initializeMainPageScripts() {
-    startTypingEffect();
-    setupScrollAnimation();
-    
-    const statsSection = document.querySelector('#stats');
+    // Настраиваем IntersectionObserver для счетчика
+    const statsSection = document.querySelector('.stats-section');
     if (statsSection) {
         const statsObserver = new IntersectionObserver(startCounterAnimation, { threshold: 0.5 });
         statsObserver.observe(statsSection);
     }
+    // Запускаем слайдер
+    setupTestimonialsSlider();
 }
 
 // Главная логика загрузки
