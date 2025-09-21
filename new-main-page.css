@@ -6,23 +6,23 @@
 :root {
     /* Цвета для Светлой Темы */
     --bg-primary: #ffffff;
-    --bg-secondary: #f3f4f6;
-    --bg-dark-section: #111827; /* Темный фон для секций "Статистика" и "Команда" */
-    --bg-accent: #00fde4; /* Яркий бирюзовый акцент */
-    --text-primary: #111827; /* Основной темный текст */
-    --text-secondary: #ffffff; /* Основной светлый текст */
-    --text-on-accent: #111827; /* Темный текст для бирюзового фона */
+    --bg-secondary: #ffffff; /* ИЗМЕНЕНО: Теперь чисто белый */
+    --bg-dark-section: #111827;
+    --bg-accent: #00fde4;
+    --text-primary: #111827;
+    --text-secondary: #ffffff;
+    --text-on-accent: #111827;
     --text-muted: #6b7280;
-    --border-color: #d1d5db;
+    --border-color: #e5e7eb; /* Новый цвет для тонких рамок */
     --brand-blue: #4f46e5;
     --brand-violet: #a855f7;
 }
 
 body.dark-mode {
-    /* Переопределяем цвета для Темной Темы */
+    /* Цвета для Темной Темы */
     --bg-primary: #111827;
     --bg-secondary: #1f2937;
-    --bg-dark-section: #000000; /* В темной теме эти секции будут черными */
+    --bg-dark-section: #000000;
     --text-primary: #ffffff;
     --text-secondary: #111827;
     --text-muted: #9ca3af;
@@ -48,16 +48,29 @@ body.new-design main section {
 }
 .new-container { max-width: 1200px; margin: 0 auto; }
 
-/* === НОВАЯ ШАПКА === */
-.new-header { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+/* === НОВАЯ ШАПКА (ИСПРАВЛЕНО) === */
+.new-header {
+    padding: 24px 0;
+    background-color: var(--bg-primary); /* Фон теперь здесь */
+    border-bottom: 1px solid var(--border-color); /* Полоска снизу */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.header-container { /* Внутренний контейнер для центрирования */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .new-logo { display: flex; align-items: center; gap: 12px; font-size: 24px; font-weight: 800; text-decoration: none; color: var(--text-primary); transition: color 0.3s; }
+.logo-svg {
+    height: 32px; /* Оптимальный размер */
+    width: auto;
+    flex-shrink: 0; /* Запрещаем сжиматься */
+}
 .logo-svg path { fill: var(--text-primary); transition: fill 0.3s; }
 .new-nav { display: flex; align-items: center; gap: 16px; }
 .new-signup-btn { background-color: var(--brand-blue); color: #ffffff; padding: 10px 20px; border-radius: 99px; text-decoration: none; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
 .new-signup-btn:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3); }
 .hamburger-menu { font-size: 28px; cursor: pointer; }
-
-/* Кнопка смены темы */
 .theme-toggle { background: none; border: none; cursor: pointer; color: var(--text-primary); font-size: 22px; padding: 5px; line-height: 1; }
 .theme-toggle .fa-sun { display: none; }
 body.dark-mode .theme-toggle .fa-sun { display: inline-block; }
@@ -92,7 +105,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 .courses-list-section .section-subtitle { font-size: 18px; color: var(--text-muted); max-width: 600px; margin-bottom: 60px; }
 .course-item { display: flex; gap: 60px; align-items: center; margin-bottom: 80px; }
 .course-item:nth-child(even) { flex-direction: row-reverse; }
-.course-image { flex: 1; background-color: var(--bg-secondary); height: 400px; border-radius: 24px; position: relative; transition: background-color 0.3s; }
+.course-image { flex: 1; background-color: var(--bg-secondary); border: 1px solid var(--border-color); height: 400px; border-radius: 24px; position: relative; transition: background-color 0.3s, border-color 0.3s; }
 .course-image .arrow-btn { position: absolute; bottom: 24px; right: 24px; width: 48px; height: 48px; background-color: var(--text-primary); color: var(--bg-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; transition: background-color 0.3s, color 0.3s; }
 .course-details { flex: 1; }
 .course-details h3 { font-size: 36px; font-weight: 700; margin-bottom: 16px; text-align: left; }
@@ -108,7 +121,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 .slider-container { overflow: hidden; }
 .slider-wrapper { display: flex; transition: transform 0.5s ease-in-out; }
 .testimonial-card { flex: 0 0 33.33%; box-sizing: border-box; padding: 24px; }
-.testimonial-content { background-color: var(--bg-secondary); padding: 32px; border-radius: 24px; height: 100%; transition: background-color 0.3s; }
+.testimonial-content { background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 32px; border-radius: 24px; height: 100%; transition: background-color 0.3s, border-color 0.3s; }
 .testimonial-text { font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
 .testimonial-author { display: flex; align-items: center; gap: 12px; }
 .author-avatar { width: 40px; height: 40px; border-radius: 50%; background-color: var(--border-color); }
@@ -127,54 +140,14 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 .team-member .role { font-size: 14px; color: var(--text-muted); }
 .view-all-btn { display: block; width: 100%; text-align: center; padding: 16px; border: 1px solid #374151; border-radius: 16px; margin-top: 32px; text-decoration: none; color: var(--text-secondary); font-weight: 600; }
 
-/* === ФИНАЛЬНАЯ СЕКЦИЯ CTA И ПОДВАЛ (ИСПРАВЛЕНА) === */
-.final-cta-section { 
-    background-color: var(--bg-accent); 
-    color: var(--text-on-accent); /* Используем специальный цвет текста */
-}
+/* === ФИНАЛЬНАЯ СЕКЦИЯ CTA И ПОДВАЛ (ИСПРАВЛЕНО) === */
+.final-cta-section { background-color: var(--bg-accent); color: var(--text-on-accent); }
 .cta-container { display: flex; justify-content: space-between; align-items: center; }
 .cta-title { font-size: 80px; font-weight: 800; line-height: 1.1; }
 .cta-right { text-align: right; }
-.cta-button { 
-    display: inline-flex; 
-    align-items: center; 
-    gap: 12px; 
-    padding: 12px 24px; 
-    background-color: var(--bg-primary); /* Будет белым или темным в зависимости от темы */
-    border-radius: 99px; 
-    text-decoration: none; 
-    color: var(--text-primary); /* Будет темным или белым в зависимости от темы */
-    font-weight: 600; 
-    margin-bottom: 24px; 
-    transition: background-color 0.3s, color 0.3s; 
-}
-.social-links-final a { 
-    display: flex; 
-    align-items: center; 
-    gap: 8px; 
-    margin-bottom: 8px; 
-    text-decoration: none; 
-    color: var(--text-on-accent); 
-    font-weight: 500; 
-}
-.new-footer { 
-    padding-top: 40px; 
-    background-color: transparent !important; /* Убираем фон, чтобы он был частью секции */
-}
-.footer-content { 
-    border-top: 2px solid var(--text-on-accent); 
-    padding-top: 40px; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-}
-.footer-nav a { 
-    text-decoration: none; 
-    color: var(--text-on-accent); 
-    margin-left: 24px; 
-    font-weight: 500; 
-}
-.copyright { 
-    font-size: 14px; 
-    color: var(--text-on-accent);
-}
+.cta-button { display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; background-color: var(--bg-primary); border-radius: 99px; text-decoration: none; color: var(--text-primary); font-weight: 600; margin-bottom: 24px; transition: background-color 0.3s, color 0.3s; }
+.social-links-final a { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; text-decoration: none; color: var(--text-on-accent); font-weight: 500; }
+.new-footer { padding-top: 40px; background-color: transparent !important; }
+.footer-content { border-top: 2px solid var(--text-on-accent); padding-top: 40px; display: flex; justify-content: space-between; align-items: center; }
+.footer-nav a { text-decoration: none; color: var(--text-on-accent); margin-left: 24px; font-weight: 500; }
+.copyright { font-size: 14px; color: var(--text-on-accent); }
