@@ -104,9 +104,8 @@ function setupThemeSwitcher() {
     if (savedTheme) {
         applyTheme(savedTheme);
     } else {
-        // 2. Если нет, проверяем системные настройки
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        applyTheme(prefersDark ? 'dark' : 'light');
+        // 2. Если тема не сохранена, по умолчанию всегда включаем светлую
+        applyTheme('light');
     }
 
     // 3. Навешиваем событие на кнопку
