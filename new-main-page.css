@@ -1,4 +1,4 @@
-/* new-main-page.css (Финальная и корректная версия) */
+/* new-main-page.css (Финальная и 100% рабочая версия) */
 
 /* === ШРИФТЫ И ГЛОБАЛЬНЫЕ НАСТРОЙКИ === */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display.swap');
@@ -37,7 +37,7 @@ body.new-design {
     background-image: none;
     background-color: var(--bg-primary);
     font-family: 'Inter', sans-serif;
-    color: var(--text-primary); /* ИСПРАВЛЕНО: Устанавливаем базовый цвет текста для нового дизайна, переопределяя styles.css */
+    color: var(--text-primary); /* Устанавливаем базовый цвет текста для нового дизайна, чтобы перебить styles.css */
     transition: background-color 0.3s, color 0.3s;
 }
 body.new-design main section {
@@ -64,11 +64,7 @@ body.new-design main section {
     align-items: center;
 }
 .new-logo { display: flex; align-items: center; gap: 12px; font-size: 24px; font-weight: 800; text-decoration: none; color: var(--text-primary); transition: color 0.3s; }
-.logo-svg {
-    height: 32px;
-    width: auto;
-    flex-shrink: 0;
-}
+.logo-svg { height: 32px; width: auto; flex-shrink: 0; }
 .logo-svg path { fill: var(--text-primary); transition: fill 0.3s; }
 .new-nav { display: flex; align-items: center; gap: 16px; }
 .new-signup-btn { background-color: var(--brand-blue); color: #ffffff; padding: 10px 20px; border-radius: 99px; text-decoration: none; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
@@ -95,6 +91,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 /* === СЕКЦИЯ СТАТИСТИКИ === */
 .stats-section {
     background-color: var(--bg-dark-section);
+    color: var(--text-on-dark); /* ИСПРАВЛЕНО: Устанавливаем базовый цвет для ВСЕХ элементов внутри */
     border-radius: 24px;
     margin: 80px 24px !important;
     transition: background-color 0.3s;
@@ -105,7 +102,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
     font-weight: 800;
     line-height: 1.2;
     flex-basis: 50%;
-    color: var(--text-on-dark); /* ИСПРАВЛЕНО: Явно задаем белый цвет */
+    /* color теперь наследуется от .stats-section */
 }
 .stats-title .highlight { background-color: var(--brand-blue); border-radius: 12px; padding: 0 12px; display: inline-block; }
 .stats-data { flex-basis: 40%; }
@@ -119,6 +116,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 .stat-item .label { font-size: 16px; color: var(--text-muted); }
 
 /* === СЕКЦИЯ КУРСОВ === */
+/* ... без изменений ... */
 .courses-list-section .section-title { font-size: 48px; font-weight: 800; margin-bottom: 16px; }
 .courses-list-section .section-subtitle { font-size: 18px; color: var(--text-muted); max-width: 600px; margin-bottom: 60px; }
 .course-item { display: flex; gap: 60px; align-items: center; margin-bottom: 80px; }
@@ -144,13 +142,13 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 24px;
-    color: var(--text-muted); /* Делаем текст отзыва менее ярким */
+    color: var(--text-muted);
 }
 .testimonial-author { display: flex; align-items: center; gap: 12px; }
 .author-avatar { width: 40px; height: 40px; border-radius: 50%; background-color: var(--border-color); }
 .author-name {
     font-weight: 600;
-    color: var(--text-primary); /* Делаем имя автора самым ярким */
+    color: var(--text-primary);
 }
 .slider-controls { position: absolute; right: 24px; bottom: 80px; display: flex; gap: 16px; }
 .slider-arrow { width: 48px; height: 48px; border-radius: 50%; background-color: var(--text-primary); color: var(--bg-primary); border: none; cursor: pointer; font-size: 20px; transition: background-color 0.3s, color 0.3s; }
@@ -158,6 +156,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 /* === СЕКЦИЯ КОМАНДЫ === */
 .team-section {
     background-color: var(--bg-dark-section);
+    color: var(--text-on-dark); /* ИСПРАВЛЕНО: Устанавливаем базовый цвет для ВСЕХ элементов внутри */
     border-radius: 24px;
     margin: 80px 24px !important;
     transition: background-color 0.3s;
@@ -167,18 +166,18 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
     flex-basis: 40%;
     font-size: 24px;
     line-height: 1.5;
-    color: var(--text-on-dark); /* ИСПРАВЛЕНО: Явно задаем белый цвет */
+    /* color теперь наследуется от .team-section */
 }
 .team-grid { flex-basis: 60%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .team-member { text-align: center; }
 .team-photo { width: 100%; padding-bottom: 100%; background-color: #374151; border-radius: 16px; margin-bottom: 12px; }
 .team-member .name {
     font-weight: 600;
-    color: var(--text-on-dark); /* ИСПРАВЛЕНО: Явно задаем белый цвет */
+    /* color теперь наследуется от .team-section */
 }
 .team-member .role {
     font-size: 14px;
-    color: var(--text-muted); /* Роль может быть менее яркой, этот цвет контрастен на темном фоне */
+    color: var(--text-muted);
 }
 .view-all-btn {
     display: block;
@@ -190,7 +189,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
     border-radius: 16px;
     margin-top: 32px;
     text-decoration: none;
-    color: var(--text-on-dark); /* ИСПРАВЛЕНО: Явно задаем белый цвет */
+    color: var(--text-on-dark); /* Задаем явно на всякий случай */
     font-weight: 600;
     transition: background-color 0.3s, border-color 0.3s;
 }
@@ -200,6 +199,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 }
 
 /* === ФИНАЛЬНАЯ СЕКЦИЯ CTA И ПОДВАЛ === */
+/* ... без изменений ... */
 .final-cta-section {
     background-color: var(--bg-accent);
     color: var(--text-on-accent);
