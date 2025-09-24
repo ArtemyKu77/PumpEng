@@ -1,64 +1,56 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PumpEng - Языковой коучинг для лидеров и экспертов</title>
-    <meta name="description" content="PumpEng - первая в СНГ система языкового коучинга, которая строит не словарный запас, а ваше мышление и статус. Помогаем лидерам и экспертам звучать убедительно.">
-
-    <!-- Старые стили для внутренних страниц -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="courses-overview-styles.css">
-    <link rel="stylesheet" href="reviews-styles.css">
-
-    <!-- !!! НОВЫЙ ФАЙЛ СТИЛЕЙ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ !!! -->
-    <link rel="stylesheet" href="new-main-page.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<!-- !!! Добавлен класс new-design для применения новых стилей !!! -->
-<body class="new-design">
+    <meta name="description" content="PumpEng – первая в СНГ система языкового коучинга, которая строит не словарный запас, а ваше мышление и статус.">
     
-    <!-- Старая структура шапки и подвала остается для совместимости с внутренними страницами, но на главной она будет заменена -->
-    <header style="display: none;">
-        <!-- Пусто, так как новая шапка будет в main.html -->
-    </header>
+    <!-- Стили для ДРУГИХ страниц сайта (оставляем для совместимости) -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Иконки Font Awesome (нужны для нового дизайна) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- ИЗМЕНЕНО: Подключаем ЕДИНСТВЕННЫЙ новый файл стилей -->
+    <link rel="stylesheet" href="style-v2.css">
+</head>
+<body class="new-design">
 
-    <div id="main-content">
-        <!-- Основной контент главной страницы будет загружен сюда из main.html -->
-    </div>
-
-    <footer style="display: none;">
-        <!-- Пусто, так как новый подвал будет в main.html -->
-    </footer>
-
+    <!-- Этот контейнер будет заполнен содержимым из main-v2.html -->
+    <div id="main-content"></div>
+    
+    <!-- ИЗМЕНЕНО: Новый, надежный способ загрузки -->
     <script>
-        // Этот скрипт загружает main.html
-        async function loadMainContent() {
+        // Эта функция загружает HTML-код новой главной страницы в контейнер выше
+        async function loadMainPage(containerId, filePath) {
             try {
-                const response = await fetch('main.html');
-                if (!response.ok) throw new Error('Could not fetch main.html');
+                const response = await fetch(filePath);
+                if (!response.ok) {
+                    throw new Error(`Ошибка загрузки: ${response.statusText}`);
+                }
                 const html = await response.text();
-                const mainContentElement = document.querySelector('#main-content');
-                if (mainContentElement) {
-                    mainContentElement.innerHTML = html;
+                const element = document.getElementById(containerId);
+                
+                if (element) {
+                    element.innerHTML = html;
+                    
+                    // ШАГ 2: Только ПОСЛЕ загрузки HTML, мы подключаем скрипт для него.
+                    // Это гарантирует, что скрипт найдет все нужные ему элементы.
+                    const script = document.createElement('script');
+                    script.src = 'script-v2.js'; // Подключаем новый, исправленный скрипт
+                    document.body.appendChild(script);
                 }
             } catch (error) {
-                console.error('Error loading main content:', error);
+                console.error('Не удалось загрузить компонент главной страницы:', error);
             }
         }
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', loadMainContent);
-        } else {
-            loadMainContent();
-        }
+
+        // Запускаем загрузку при старте страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            loadMainPage('main-content', 'main-v2.html'); // Загружаем новый, исправленный HTML
+        });
     </script>
-    
-    <!-- Кнопка "Наверх" и основной скрипт остаются -->
-    <button id="scrollToTopBtn" title="Наверх">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    <script src="script.js"></script>
+
 </body>
 </html>
