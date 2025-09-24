@@ -1,12 +1,12 @@
-/* style-v2.css (Единый, самодостаточный файл стилей для новой главной страницы) */
+/* style-v2.css (Версия "Единое Полотно") */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display.swap');
 
 :root {
     /* Цвета для Светлой Темы */
     --bg-primary: #ffffff;
-    --bg-secondary: #ffffff;
-    --bg-dark-section: #111827;
+    --bg-secondary: #f9fafb; /* Чуть-чуть серый для ховер-эффектов */
+    --bg-dark-section: #111827; /* Больше не используется для фона, но оставляем для истории */
     --bg-accent: #00fde4;
     --text-primary: #111827;
     --text-on-dark: #ffffff;
@@ -29,7 +29,6 @@ body.new-design {
 body.dark-mode {
     --bg-primary: #111827;
     --bg-secondary: #1f2937;
-    --bg-dark-section: #000000;
     --text-primary: #ffffff;
     --text-muted: #9ca3af;
     --border-color: #374151;
@@ -72,11 +71,13 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 .intro-text-section h3 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--text-primary); }
 .intro-text-section p { font-size: 32px; line-height: 1.4; max-width: 800px; margin: 0 auto; color: var(--text-primary); }
 
-/* === СЕКЦИЯ СТАТИСТИКИ === */
+/* === СЕКЦИЯ СТАТИСТИКИ (ИЗМЕНЕНО) === */
 .stats-section {
-    background-color: var(--bg-dark-section);
-    color: var(--text-on-dark);
-    border-radius: 24px; margin: 80px 24px !important; transition: background-color 0.3s;
+    background-color: transparent; /* Убрали темный фон */
+    color: var(--text-primary);     /* Текст теперь основного цвета */
+    border-radius: 0;               /* Убрали скругления */
+    margin: 0 !important;           /* Убрали внешние отступы */
+    transition: background-color 0.3s;
 }
 .stats-container { display: flex; justify-content: space-between; align-items: center; gap: 40px; }
 .stats-title { font-size: 56px; font-weight: 800; line-height: 1.2; flex-basis: 50%; }
@@ -103,7 +104,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 .course-btn.primary { background-color: var(--brand-blue); color: #ffffff; }
 .course-btn.secondary { background-color: var(--bg-primary); color: var(--text-primary); border: 1px solid var(--border-color); transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
 
-/* === СЕКЦИЯ ОТЗЫВОВ (НОВЫЙ СЛАЙДЕР) === */
+/* === СЕКЦИЯ ОТЗЫВОВ (СЛАЙДЕР) === */
 .testimonials-section { position: relative; padding-bottom: 120px !important; }
 .slider-container { max-width: 800px; margin: 0 auto; overflow: hidden; }
 .slider-wrapper { display: flex; transition: transform 0.5s ease-in-out; }
@@ -116,26 +117,28 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 .slider-controls { position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px; }
 .slider-arrow { width: 48px; height: 48px; border-radius: 50%; background-color: var(--text-primary); color: var(--bg-primary); border: none; cursor: pointer; font-size: 20px; transition: background-color 0.3s, color 0.3s; }
 
-/* === СЕКЦИЯ КОМАНДЫ === */
+/* === СЕКЦИЯ КОМАНДЫ (ИЗМЕНЕНО) === */
 .team-section {
-    background-color: var(--bg-dark-section);
-    color: var(--text-on-dark);
-    border-radius: 24px; margin: 80px 24px !important; transition: background-color 0.3s;
+    background-color: transparent; /* Убрали темный фон */
+    color: var(--text-primary);     /* Текст теперь основного цвета */
+    border-radius: 0;               /* Убрали скругления */
+    margin: 0 !important;           /* Убрали внешние отступы */
+    transition: background-color 0.3s;
 }
 .team-container { display: flex; gap: 40px; align-items: flex-start; }
 .team-description { font-size: 24px; line-height: 1.5; flex-basis: 40%; }
 .team-grid { flex-basis: 60%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .team-member { text-align: center; }
 .team-photo { width: 100%; padding-bottom: 100%; background-color: #374151; border-radius: 16px; margin-bottom: 12px; }
-.team-member .name { font-weight: 600; color: var(--text-on-dark); }
+.team-member .name { font-weight: 600; color: var(--text-primary); }
 .team-member .role { font-size: 14px; color: var(--text-muted); }
-.view-all-btn {
+.view-all-btn { /* Новый стиль для кнопки на светлом фоне */
     display: block; width: 100%; text-align: center; padding: 16px;
-    background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 16px; margin-top: 32px; text-decoration: none; color: var(--text-on-dark);
+    background-color: transparent; border: 1px solid var(--border-color);
+    border-radius: 16px; margin-top: 32px; text-decoration: none; color: var(--text-primary);
     font-weight: 600; transition: background-color 0.3s, border-color 0.3s;
 }
-.view-all-btn:hover { background-color: rgba(255, 255, 255, 0.2); }
+.view-all-btn:hover { background-color: var(--bg-secondary); }
 
 /* === ФИНАЛЬНАЯ СЕКЦИЯ CTA И ПОДВАЛ === */
 .final-cta-section { background-color: var(--bg-accent); color: var(--text-on-accent); }
