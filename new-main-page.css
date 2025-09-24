@@ -1,4 +1,4 @@
-/* new-main-page.css (Финальная и 100% рабочая версия) */
+/* new-main-page.css (Финальная, силовая и 100% рабочая версия) */
 
 /* === ШРИФТЫ И ГЛОБАЛЬНЫЕ НАСТРОЙКИ === */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display.swap');
@@ -37,7 +37,7 @@ body.new-design {
     background-image: none;
     background-color: var(--bg-primary);
     font-family: 'Inter', sans-serif;
-    color: var(--text-primary); /* Устанавливаем базовый цвет текста для нового дизайна, чтобы перебить styles.css */
+    color: var(--text-primary); /* Устанавливаем базовый цвет текста для нового дизайна */
     transition: background-color 0.3s, color 0.3s;
 }
 body.new-design main section {
@@ -91,7 +91,6 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 /* === СЕКЦИЯ СТАТИСТИКИ === */
 .stats-section {
     background-color: var(--bg-dark-section);
-    color: var(--text-on-dark); /* ИСПРАВЛЕНО: Устанавливаем базовый цвет для ВСЕХ элементов внутри */
     border-radius: 24px;
     margin: 80px 24px !important;
     transition: background-color 0.3s;
@@ -102,7 +101,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
     font-weight: 800;
     line-height: 1.2;
     flex-basis: 50%;
-    /* color теперь наследуется от .stats-section */
+    color: var(--text-on-dark) !important; /* ИСПРАВЛЕНО: Принудительно задаем белый цвет */
 }
 .stats-title .highlight { background-color: var(--brand-blue); border-radius: 12px; padding: 0 12px; display: inline-block; }
 .stats-data { flex-basis: 40%; }
@@ -116,7 +115,6 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 .stat-item .label { font-size: 16px; color: var(--text-muted); }
 
 /* === СЕКЦИЯ КУРСОВ === */
-/* ... без изменений ... */
 .courses-list-section .section-title { font-size: 48px; font-weight: 800; margin-bottom: 16px; }
 .courses-list-section .section-subtitle { font-size: 18px; color: var(--text-muted); max-width: 600px; margin-bottom: 60px; }
 .course-item { display: flex; gap: 60px; align-items: center; margin-bottom: 80px; }
@@ -156,7 +154,6 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 /* === СЕКЦИЯ КОМАНДЫ === */
 .team-section {
     background-color: var(--bg-dark-section);
-    color: var(--text-on-dark); /* ИСПРАВЛЕНО: Устанавливаем базовый цвет для ВСЕХ элементов внутри */
     border-radius: 24px;
     margin: 80px 24px !important;
     transition: background-color 0.3s;
@@ -166,14 +163,14 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
     flex-basis: 40%;
     font-size: 24px;
     line-height: 1.5;
-    /* color теперь наследуется от .team-section */
+    color: var(--text-on-dark) !important; /* ИСПРАВЛЕНО: Принудительно задаем белый цвет */
 }
 .team-grid { flex-basis: 60%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .team-member { text-align: center; }
 .team-photo { width: 100%; padding-bottom: 100%; background-color: #374151; border-radius: 16px; margin-bottom: 12px; }
 .team-member .name {
     font-weight: 600;
-    /* color теперь наследуется от .team-section */
+    color: var(--text-on-dark) !important; /* ИСПРАВЛЕНО: Принудительно задаем белый цвет */
 }
 .team-member .role {
     font-size: 14px;
@@ -189,7 +186,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
     border-radius: 16px;
     margin-top: 32px;
     text-decoration: none;
-    color: var(--text-on-dark); /* Задаем явно на всякий случай */
+    color: var(--text-on-dark) !important; /* ИСПРАВЛЕНО: Принудительно задаем белый цвет */
     font-weight: 600;
     transition: background-color 0.3s, border-color 0.3s;
 }
@@ -199,7 +196,6 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 }
 
 /* === ФИНАЛЬНАЯ СЕКЦИЯ CTA И ПОДВАЛ === */
-/* ... без изменений ... */
 .final-cta-section {
     background-color: var(--bg-accent);
     color: var(--text-on-accent);
