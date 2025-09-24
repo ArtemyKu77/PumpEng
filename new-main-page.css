@@ -10,7 +10,7 @@
     --bg-dark-section: #111827;
     --bg-accent: #00fde4;
     --text-primary: #111827;
-    --text-on-dark: #ffffff; /* ИЗМЕНЕНО: Новая переменная для белого текста на темном фоне */
+    --text-on-dark: #ffffff; /* Новая переменная для белого текста на темном фоне */
     --text-on-accent: #111827;
     --text-muted: #6b7280;
     --border-color: #e5e7eb;
@@ -95,13 +95,18 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 /* === СЕКЦИЯ СТАТИСТИКИ === */
 .stats-section {
     background-color: var(--bg-dark-section);
-    color: var(--text-on-dark); /* ИСПРАВЛЕНО */
     border-radius: 24px;
     margin: 80px 24px !important;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s;
 }
 .stats-container { display: flex; justify-content: space-between; align-items: center; gap: 40px; }
-.stats-title { font-size: 56px; font-weight: 800; line-height: 1.2; flex-basis: 50%; }
+.stats-title {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.2;
+    flex-basis: 50%;
+    color: var(--text-on-dark); /* ИСПРАВЛЕНО */
+}
 .stats-title .highlight { background-color: var(--brand-blue); border-radius: 12px; padding: 0 12px; display: inline-block; }
 .stats-data { flex-basis: 40%; }
 .stat-item { padding: 16px 0; border-bottom: 1px solid var(--border-color); }
@@ -139,13 +144,13 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 24px;
-    color: var(--text-muted); /* ИСПРАВЛЕНО */
+    color: var(--text-muted); /* ИСПРАВЛЕНО: делаем текст отзыва менее ярким */
 }
 .testimonial-author { display: flex; align-items: center; gap: 12px; }
 .author-avatar { width: 40px; height: 40px; border-radius: 50%; background-color: var(--border-color); }
 .author-name {
     font-weight: 600;
-    color: var(--text-primary); /* ИСПРАВЛЕНО */
+    color: var(--text-primary); /* ИСПРАВЛЕНО: делаем имя автора самым ярким */
 }
 .slider-controls { position: absolute; right: 24px; bottom: 80px; display: flex; gap: 16px; }
 .slider-arrow { width: 48px; height: 48px; border-radius: 50%; background-color: var(--text-primary); color: var(--bg-primary); border: none; cursor: pointer; font-size: 20px; transition: background-color 0.3s, color 0.3s; }
@@ -153,24 +158,27 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 /* === СЕКЦИЯ КОМАНДЫ === */
 .team-section {
     background-color: var(--bg-dark-section);
-    color: var(--text-on-dark); /* ИСПРАВЛЕНО */
     border-radius: 24px;
     margin: 80px 24px !important;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s;
 }
 .team-container { display: flex; gap: 40px; align-items: flex-start; }
 .team-description {
     flex-basis: 40%;
     font-size: 24px;
     line-height: 1.5;
+    color: var(--text-on-dark); /* ИСПРАВЛЕНО */
 }
 .team-grid { flex-basis: 60%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .team-member { text-align: center; }
 .team-photo { width: 100%; padding-bottom: 100%; background-color: #374151; border-radius: 16px; margin-bottom: 12px; }
-.team-member .name { font-weight: 600; }
+.team-member .name {
+    font-weight: 600;
+    color: var(--text-on-dark); /* ИСПРАВЛЕНО */
+}
 .team-member .role {
     font-size: 14px;
-    color: var(--text-on-dark); /* ИСПРАВЛЕНО */
+    color: var(--text-muted); /* ИСПРАВЛЕНО: Роль может быть менее яркой */
 }
 .view-all-btn {
     display: block;
