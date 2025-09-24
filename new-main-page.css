@@ -8,15 +8,15 @@
     --bg-primary: #ffffff;
     --bg-secondary: #ffffff;
     --bg-dark-section: #111827;
-    --bg-accent: #00fde4; /* Светло-зеленый/бирюзовый */
+    --bg-accent: #00fde4;
     --text-primary: #111827;
-    --text-secondary: #ffffff;
-    --text-on-accent: #111827; /* Темный текст для акцентного фона */
+    --text-on-dark: #ffffff; /* ИЗМЕНЕНО: Новая переменная для белого текста на темном фоне */
+    --text-on-accent: #111827;
     --text-muted: #6b7280;
     --border-color: #e5e7eb;
     --brand-blue: #4f46e5;
     --brand-violet: #a855f7;
-    --stat-number-color: #f0a500; /* НОВАЯ ПЕРЕМЕННАЯ: Оранжевый для чисел */
+    --stat-number-color: #f0a500;
 }
 
 body.dark-mode {
@@ -27,11 +27,9 @@ body.dark-mode {
     --text-primary: #ffffff;
     --text-muted: #9ca3af;
     --border-color: #374151;
-
-    /* НОВЫЕ ПЕРЕОПРЕДЕЛЕНИЯ ДЛЯ ТЕМНОЙ ТЕМЫ */
-    --bg-accent: var(--bg-secondary); /* Темный фон для акцентной секции в темной теме */
-    --text-on-accent: var(--text-primary); /* Светлый текст для акцентной секции в темной теме */
-    --stat-number-color: var(--text-primary); /* Белый для чисел в темной теме */
+    --bg-accent: var(--bg-secondary);
+    --text-on-accent: var(--text-primary);
+    --stat-number-color: var(--text-primary);
 }
 
 /* === ОСНОВНЫЕ СТИЛИ === */
@@ -53,23 +51,23 @@ body.new-design main section {
 }
 .new-container { max-width: 1200px; margin: 0 auto; }
 
-/* === НОВАЯ ШАПКА (ИСПРАВЛЕНО) === */
+/* === НОВАЯ ШАПКА === */
 .new-header {
     padding: 24px 0;
-    background-color: var(--bg-primary); /* Фон теперь здесь */
-    border-bottom: 1px solid var(--border-color); /* Полоска снизу */
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
     transition: background-color 0.3s, border-color 0.3s;
 }
-.header-container { /* Внутренний контейнер для центрирования */
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .new-logo { display: flex; align-items: center; gap: 12px; font-size: 24px; font-weight: 800; text-decoration: none; color: var(--text-primary); transition: color 0.3s; }
 .logo-svg {
-    height: 32px; /* Оптимальный размер */
+    height: 32px;
     width: auto;
-    flex-shrink: 0; /* Запрещаем сжиматься */
+    flex-shrink: 0;
 }
 .logo-svg path { fill: var(--text-primary); transition: fill 0.3s; }
 .new-nav { display: flex; align-items: center; gap: 16px; }
@@ -97,10 +95,10 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 /* === СЕКЦИЯ СТАТИСТИКИ === */
 .stats-section {
     background-color: var(--bg-dark-section);
-    color: var(--text-secondary);
+    color: var(--text-on-dark); /* ИСПРАВЛЕНО */
     border-radius: 24px;
     margin: 80px 24px !important;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 .stats-container { display: flex; justify-content: space-between; align-items: center; gap: 40px; }
 .stats-title { font-size: 56px; font-weight: 800; line-height: 1.2; flex-basis: 50%; }
@@ -137,20 +135,28 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 .slider-wrapper { display: flex; transition: transform 0.5s ease-in-out; }
 .testimonial-card { flex: 0 0 33.33%; box-sizing: border-box; padding: 24px; }
 .testimonial-content { background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 32px; border-radius: 24px; height: 100%; transition: background-color 0.3s, border-color 0.3s; }
-.testimonial-text { font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
+.testimonial-text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    color: var(--text-muted); /* ИСПРАВЛЕНО */
+}
 .testimonial-author { display: flex; align-items: center; gap: 12px; }
 .author-avatar { width: 40px; height: 40px; border-radius: 50%; background-color: var(--border-color); }
-.author-name { font-weight: 600; }
+.author-name {
+    font-weight: 600;
+    color: var(--text-primary); /* ИСПРАВЛЕНО */
+}
 .slider-controls { position: absolute; right: 24px; bottom: 80px; display: flex; gap: 16px; }
 .slider-arrow { width: 48px; height: 48px; border-radius: 50%; background-color: var(--text-primary); color: var(--bg-primary); border: none; cursor: pointer; font-size: 20px; transition: background-color 0.3s, color 0.3s; }
 
 /* === СЕКЦИЯ КОМАНДЫ === */
 .team-section {
     background-color: var(--bg-dark-section);
-    color: var(--text-secondary);
+    color: var(--text-on-dark); /* ИСПРАВЛЕНО */
     border-radius: 24px;
     margin: 80px 24px !important;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 .team-container { display: flex; gap: 40px; align-items: flex-start; }
 .team-description {
@@ -164,7 +170,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
 .team-member .name { font-weight: 600; }
 .team-member .role {
     font-size: 14px;
-    color: var(--text-secondary); /* ИСПРАВЛЕНИЕ: Используем белый цвет для роли */
+    color: var(--text-on-dark); /* ИСПРАВЛЕНО */
 }
 .view-all-btn {
     display: block;
@@ -176,7 +182,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
     border-radius: 16px;
     margin-top: 32px;
     text-decoration: none;
-    color: var(--text-secondary);
+    color: var(--text-on-dark); /* ИСПРАВЛЕНО */
     font-weight: 600;
     transition: background-color 0.3s, border-color 0.3s;
 }
@@ -185,7 +191,7 @@ body.dark-mode .theme-toggle .fa-moon { display: none; }
     border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* === ФИНАЛЬНАЯ СЕКЦИЯ CTA И ПОДВАЛ (ИСПРАВЛЕНО) === */
+/* === ФИНАЛЬНАЯ СЕКЦИЯ CTA И ПОДВАЛ === */
 .final-cta-section {
     background-color: var(--bg-accent);
     color: var(--text-on-accent);
