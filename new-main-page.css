@@ -1,4 +1,4 @@
-/* new-main-page.css (Версия с меню и фото) */
+/* new-main-page.css (Финальная версия под макет) */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 
@@ -50,58 +50,32 @@ h1, h2, h3, h4, p { margin: 0; }
 .new-header { padding: 24px 0; }
 .header-container { display: flex; justify-content: flex-end; align-items: center; }
 .header-actions { display: flex; align-items: center; gap: 20px; }
-
-/* Контейнер для меню, чтобы позиционировать выпадающий список */
-.menu-container {
-    position: relative;
-}
-
+.menu-container { position: relative; }
 .hamburger-menu { width: 24px; cursor: pointer; }
 .hamburger-menu span {
     display: block; height: 2px; background-color: #000;
     margin-bottom: 5px; transition: transform 0.3s ease;
 }
 .hamburger-menu span:last-child { margin-bottom: 0; }
-
-/* Выпадающее меню */
 .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #fff;
-    border: 1px solid #eee;
+    position: absolute; top: 100%; right: 0;
+    background-color: #fff; border: 1px solid #eee;
     border-radius: var(--border-radius-small);
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    list-style: none;
-    padding: 10px;
-    margin: 10px 0 0 0;
-    width: 200px;
-    /* По умолчанию скрыто */
-    opacity: 0;
-    visibility: hidden;
+    list-style: none; padding: 10px; margin: 10px 0 0 0;
+    width: 200px; opacity: 0; visibility: hidden;
     transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
-
-/* Показываем меню при наведении на контейнер */
 .menu-container:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    opacity: 1; visibility: visible; transform: translateY(0);
 }
-
 .dropdown-menu li a {
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: var(--color-text);
-    border-radius: 8px;
+    display: block; padding: 10px 15px; text-decoration: none;
+    color: var(--color-text); border-radius: 8px;
     transition: background-color 0.2s ease;
 }
-.dropdown-menu li a:hover {
-    background-color: var(--color-light-grey-bg);
-}
-
+.dropdown-menu li a:hover { background-color: var(--color-light-grey-bg); }
 
 /* === СЕКЦИЯ HERO === */
 .hero-title { font-size: 80px; font-weight: 800; line-height: 1.1; margin-bottom: 40px; }
@@ -156,7 +130,7 @@ h1, h2, h3, h4, p { margin: 0; }
 .testimonial-card p { font-size: 18px; line-height: 1.6; margin-bottom: 16px; }
 .author { font-weight: 700; }
 
-/* === СЕКЦИЯ КОМАНДЫ (ИЗМЕНЕНО ДЛЯ ФОТО) === */
+/* === СЕКЦИЯ КОМАНДЫ === */
 .team-section { background-color: var(--color-dark-bg); color: #fff; }
 .team-container { display: flex; gap: 40px; align-items: center; }
 .team-description { flex-basis: 40%; }
@@ -166,21 +140,13 @@ h1, h2, h3, h4, p { margin: 0; }
 .team-grid { flex-basis: 60%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .team-member { text-align: center; }
 .team-photo {
-    width: 100%;
-    padding-bottom: 100%; /* Делает блок квадратным */
-    background-color: #333;
-    border-radius: var(--border-radius-small);
-    margin-bottom: 12px;
-    position: relative;
-    overflow: hidden; /* Обрезает все, что выходит за рамки */
+    width: 100%; padding-bottom: 100%;
+    background-color: #333; border-radius: var(--border-radius-small);
+    margin-bottom: 12px; position: relative; overflow: hidden;
 }
 .team-photo img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Масштабирует картинку, чтобы она заполнила блок */
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
 }
 .team-member p { font-weight: 500; }
 .team-member span { font-size: 14px; color: var(--color-text-muted); }
@@ -201,3 +167,13 @@ h1, h2, h3, h4, p { margin: 0; }
 .footer-nav { display: flex; gap: 20px; }
 .footer-nav a { text-decoration: none; color: var(--color-text); }
 .copyright-container { text-align: center; color: var(--color-text-muted); font-size: 14px; }
+
+/* === КНОПКА НАВЕРХ === */
+#scrollToTopBtn {
+    display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99;
+    border: none; outline: none; background-color: var(--color-accent-blue);
+    color: white; cursor: pointer; padding: 12px 15px; border-radius: 50%;
+    font-size: 18px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, opacity 0.3s; opacity: 0.8;
+}
+#scrollToTopBtn:hover { opacity: 1; }
