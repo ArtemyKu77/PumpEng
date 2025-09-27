@@ -15,9 +15,20 @@
         <div class="container header-container">
             <div class="header-actions">
                 <a href="https://forms.gle/2wo5KMXdqD9CzpwE9" class="btn btn-primary">Записаться</a>
-                <div class="hamburger-menu">
-                    <span></span>
-                    <span></span>
+                <!-- ИЗМЕНЕНО: Контейнер для меню -->
+                <div class="menu-container">
+                    <div class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span> <!-- Добавлена третья линия -->
+                    </div>
+                    <!-- ДОБАВЛЕНО: Само выпадающее меню -->
+                    <ul class="dropdown-menu">
+                        <li><a href="courses-overview.html">Курсы</a></li>
+                        <li><a href="resources.html">Материалы</a></li>
+                        <li><a href="reviews.html">Отзывы</a></li>
+                        <li><a href="tests-overview.html">Тесты</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -132,9 +143,25 @@
                     <p class="text-muted">Каждый из них обладает высокой квалификацией, международным опытом и постоянно совершенствует свои навыки.</p>
                 </div>
                 <div class="team-grid">
-                    <div class="team-member"><div class="team-photo"></div><p>Jocelyn Schleifer</p><span>Managing Director</span></div>
-                    <div class="team-member"><div class="team-photo"></div><p>Jocelyn Schleifer</p><span>Managing Director</span></div>
-                    <div class="team-member"><div class="team-photo"></div><p>Jocelyn Schleifer</p><span>Managing Director</span></div>
+                    <!-- ИЗМЕНЕНО: Вот как вставлять фото -->
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="images/teacher-1.jpg" alt="Фото Jocelyn Schleifer">
+                        </div>
+                        <p>Jocelyn Schleifer</p><span>Managing Director</span>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="images/teacher-2.jpg" alt="Фото преподавателя 2">
+                        </div>
+                        <p>Jocelyn Schleifer</p><span>Managing Director</span>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <!-- Если фото нет, будет серая заглушка -->
+                        </div>
+                        <p>Jocelyn Schleifer</p><span>Managing Director</span>
+                    </div>
                     <div class="team-member"><div class="team-photo"></div><p>Jocelyn Schleifer</p><span>Managing Director</span></div>
                     <div class="team-member"><div class="team-photo"></div><p>Jocelyn Schleifer</p><span>Managing Director</span></div>
                     <div class="team-member"><div class="team-photo"></div><p>Jocelyn Schleifer</p><span>Managing Director</span></div>
