@@ -1,6 +1,6 @@
-/* new-main-page.css (Версия с нуля, под макет) */
+/* new-main-page.css (Финальная версия под макет) */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display.swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 
 /* === ОСНОВНЫЕ ПЕРЕМЕННЫЕ И СТИЛИ === */
 :root {
@@ -152,16 +152,26 @@ h1, h2, h3, h4, p { margin: 0; }
     margin-top: 40px; text-decoration: none; color: #fff; font-weight: 500;
 }
 
-/* === ФИНАЛЬНАЯ СЕКЦИЯ CTA === */
-.cta-section { background-color: var(--color-accent-cyan); }
+/* === ФИНАЛЬНАЯ СЕКЦИЯ CTA (ИЗМЕНЕНО) === */
+.cta-section { 
+    background-color: var(--color-accent-cyan); 
+    color: var(--color-text);
+    padding-bottom: 0; /* Убираем нижний отступ, чтобы слился с футером */
+}
 .cta-container { display: flex; justify-content: space-between; align-items: center; }
 .cta-text h2 { font-size: 80px; font-weight: 800; line-height: 1.1; }
 .cta-actions { text-align: right; }
 .social-links { display: flex; gap: 20px; justify-content: flex-end; margin-top: 20px; }
 .social-links a { color: #000; text-decoration: none; font-weight: 500; }
 
-/* === ПОДВАЛ === */
-.new-footer { padding: 40px 0; border-top: 1px solid #eee; }
+/* === ПОДВАЛ (ИЗМЕНЕНО) === */
+.new-footer { 
+    padding: 40px 0; 
+    background-color: var(--color-accent-cyan); /* Задаем такой же фон, как у CTA */
+    color: var(--color-text);
+    border-top: 1px solid #000; /* Добавляем черную линию-разделитель */
+    margin-top: -1px; /* Компенсируем толщину линии */
+}
 .footer-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .footer-brand { font-weight: 800; font-size: 24px; }
 .footer-nav { display: flex; gap: 20px; }
