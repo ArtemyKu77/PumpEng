@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Программы Роста - PumpEng</title>
-    <meta name="description" content="Выберите вашу систему роста в PumpEng: флагманские программы, интенсивы и база знаний.">
+    <meta name="description" content="Выберите вашу систему роста в PumpEng: флагманские программы, интенсивы и курсы для всех уровней.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="courses-overview-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -18,100 +19,261 @@
     <nav aria-label="breadcrumb" class="breadcrumbs-container">
         <ol class="breadcrumbs">
             <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Программы</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Программы</li>
         </ol>
     </nav>
+        <section id="courses-hero">
+            <div class="hero-content">
+                <h1>Выберите вашу систему роста</h1>
+                <p>Это не просто курсы. Это комплексные программы для достижения конкретных целей. Мы разделили их на три категории: флагманские системы для полной трансформации, специализированные интенсивы и база знаний для самостоятельного развития.</p>
+            </div>
+        </section>
 
-    <section id="programs-showcase">
-        <div class="container">
-            <h2>Выберите вашу систему роста</h2>
-            <p class="section-subtitle">Это не просто курсы. Это комплексные программы для достижения конкретных целей. Мы разделили их на три категории: флагманские системы для полной трансформации, специализированные интенсивы и база знаний для самостоятельного развития.</p>
-            
-            <div class="program-section">
-                <h3>ФЛАГМАНСКИЕ СИСТЕМЫ</h3>
-                <div class="cards-container premium-cards">
-                    <div class="course-card premium">
-                      <div class="card-icon">💡</div>
-                      <h4>Программа "THE MINDSHIFT"</h4>
-                      <p class="description">Система изменения языкового мышления для профессионалов, которые хотят говорить легко и спонтанно, а не переводить в уме.</p>
-                      <div class="tag">Групповой коучинг</div>
-                      <a href="#link-to-mindshift-details" class="button-primary">Погрузиться в систему</a>
-                    </div>
-                    <div class="course-card premium">
-                      <div class="card-icon">🚀</div>
-                      <h4>Программа "THE DEALMAKER"</h4>
-                      <p class="description">Персональный коучинг для лидеров и предпринимателей. Для тех, кому язык нужен для заключения сделок и управления командами.</p>
-                      <div class="tag">Персональная работа</div>
-                      <a href="#link-to-dealmaker-details" class="button-primary">Узнать об участии</a>
-                    </div>
+        <section id="courses-list">
+            <div class="course-cards-container">
+
+                <!-- === ФЛАГМАНСКИЕ СИСТЕМЫ === -->
+                <h3 class="program-section-title">Флагманские Системы</h3>
+                
+                <div class="course-overview-card premium">
+                  <div class="card-icon">💡</div>
+                  <h4><span class="gradient-text">Программа "THE MINDSHIFT"</span></h4>
+                  <p class="card-description">Система изменения языкового мышления для профессионалов, которые хотят говорить легко и спонтанно, а не переводить в уме.</p>
+                  <ul class="outcomes-list">
+                    <li><strong>Что вы сможете делать:</strong></li>
+                    <li>Думать и реагировать сразу на английском</li>
+                    <li>Свободно участвовать в рабочих встречах</li>
+                    <li>Уверенно выражать свое экспертное мнение</li>
+                  </ul>
+                  <div class="tag">Групповой коучинг</div>
+                  <a href="#" class="button-primary">Погрузиться в систему</a>
+                </div>
+
+                <div class="course-overview-card premium">
+                  <div class="card-icon">🚀</div>
+                  <h4><span class="gradient-text">Программа "THE DEALMAKER"</span></h4>
+                  <p class="card-description">Персональный коучинг для лидеров и предпринимателей. Для тех, кому язык нужен для заключения сделок и управления командами.</p>
+                  <ul class="outcomes-list">
+                    <li><strong>Что вы сможете делать:</strong></li>
+                    <li>Вести переговоры и заключать сделки</li>
+                    <li>Управлять международной командой</li>
+                    <li>Выступать на конференциях и презентациях</li>
+                  </ul>
+                  <div class="tag">Персональная работа</div>
+                  <a href="#" class="button-primary">Узнать об участии</a>
+                </div>
+
+                <!-- === СПЕЦИАЛИЗИРОВАННЫЕ ИНТЕНСИВЫ === -->
+                <h3 class="program-section-title">Специализированные Интенсивы</h3>
+
+                <div class="course-overview-card premium">
+                    <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                    <h4><span class="gradient-text">Интенсив "THE LAUNCHPAD" (Старт)</span></h4>
+                    <p class="card-description">Для тех, кто в начале пути. Создаем прочный фундамент и уверенность, чтобы вы могли говорить простыми фразами без страха и сомнений.</p>
+                    <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Представиться и рассказать о себе</li>
+                        <li>Заказать еду, спросить дорогу, сделать покупки</li>
+                        <li>Вести простую беседу на бытовые темы</li>
+                    </ul>
+                    <div class="tag">Быстрый старт с нуля до А2</div>
+                    <a href="beginner-intensive.html" class="button-secondary">Смотреть программу</a>
+                </div>
+
+                <div class="course-overview-card premium">
+                    <div class="card-icon"><i class="fas fa-plane-departure"></i></div>
+                    <h4><span class="gradient-text">Интенсив "THE NOMAD" (Свобода)</span></h4>
+                    <p class="card-description">Практический курс для тех, кто хочет чувствовать себя свободно в любой точке мира. Никакой сухой грамматики — только живые диалоги и ситуации.</p>
+                     <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Уверенно проходить паспортный контроль</li>
+                        <li>Решать любые вопросы в отеле и аэропорту</li>
+                        <li>Легко знакомиться и общаться с иностранцами</li>
+                    </ul>
+                    <div class="tag">Свободное общение в поездках</div>
+                    <a href="travel-english.html" class="button-secondary">Смотреть программу</a>
+                </div>
+
+                <!-- === БАЗА ЗНАНИЙ === -->
+                <h3 class="program-section-title">Для самостоятельного развития</h3>
+
+                <div class="course-overview-card premium">
+                  <div class="card-icon">🔑</div>
+                  <h4><span class="gradient-text">База знаний "THE KNOWLEDGE VAULT"</span></h4>
+                  <p class="card-description">Ваш пожизненный доступ к "мозгу" PumpEng. Готовая система знаний, скриптов и материалов для тех, кто готов идти к цели самостоятельно.</p>
+                   <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Структурированно изучать грамматику</li>
+                        <li>Получить готовые фразы для любой ситуации</li>
+                        <li>Развиваться в своем темпе по проверенной системе</li>
+                    </ul>
+                  <div class="tag">Пожизненный доступ</div>
+                  <a href="#" class="button-secondary">Получить доступ</a>
+                </div>
+
+                <!-- === ВОССТАНОВЛЕННЫЕ КУРСЫ === -->
+                <h3 class="program-section-title">Специализированные и общие курсы</h3>
+
+                <div class="course-overview-card theme-business">
+                    <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Деловой английский</h3>
+                    <p class="card-description">Специализированный курс для тех, кто хочет свободно общаться в бизнес-среде, вести проекты и выходить на международный уровень.</p>
+                     <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Проводить и участвовать в деловых встречах</li>
+                        <li>Писать профессиональные email-ы и отчеты</li>
+                        <li>Обсуждать проекты и договариваться с партнерами</li>
+                    </ul>
+                    <a href="business-english.html" class="course-overview-button">Подробнее о курсе</a>
+                </div>
+
+                <div class="course-overview-card theme-presentations">
+                    <div class="card-icon"><i class="fas fa-microphone-alt"></i></div>
+                    <h3>Выступления и презентации</h3>
+                    <p class="card-description">Научитесь создавать и проводить впечатляющие презентации, уверенно отвечать на вопросы и убеждать аудиторию.</p>
+                    <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Структурировать и проводить презентации</li>
+                        <li>Уверенно отвечать на вопросы из зала</li>
+                        <li>Использовать техники убеждения аудитории</li>
+                    </ul>
+                    <a href="presentation-prep.html" class="course-overview-button">Подробнее о курсе</a>
+                </div>
+
+                <div class="course-overview-card theme-advanced">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Advanced темы (C1)</h3>
+                    <p class="card-description">Разбор сложных грамматических нюансов, идиом, сленга и актуальных тем для продвинутых студентов.</p>
+                    <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Понимать 99% фильмов и сериалов в оригинале</li>
+                        <li>Читать неадаптированную литературу</li>
+                        <li>Использовать идиомы и сленг как носитель</li>
+                    </ul>
+                    <a href="advanced-topics.html" class="course-overview-button">Подробнее о курсе</a>
+                </div>
+
+                <div class="course-overview-card theme-levels">
+                    <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Общие курсы (A1-C1)</h3>
+                    <p class="card-description">Систематическое изучение английского языка от начального до продвинутого уровня по международной системе CEFR.</p>
+                    <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Планомерно повышать свой уровень</li>
+                        <li>Закрывать пробелы в грамматике и лексике</li>
+                        <li>Готовиться к переходу на новый уровень</li>
+                    </ul>
+                    <a href="a1-c1-courses.html" class="course-overview-button">Подробнее о курсе</a>
+                </div>
+
+                <div class="course-overview-card theme-professional">
+                    <div class="card-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Профессиональный английский</h3>
+                    <p class="card-description">Специализированная лексика и навыки для различных профессиональных сфер (IT, медицина, юриспруденция и др.).</p>
+                    <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Использовать терминологию вашей профессии</li>
+                        <li>Читать профессиональную литературу</li>
+                        <li>Общаться с коллегами на международном уровне</li>
+                    </ul>
+                    <a href="professional-english.html" class="course-overview-button">Подробнее о курсе</a>
+                </div>
+
+                <div class="course-overview-card theme-kids">
+                    <div class="card-icon"><i class="fas fa-child"></i></div>
+                    <h3>Английский для детей</h3>
+                    <p class="card-description">Игровые методики, песни и интерактивные задания для самых маленьких студентов.</p>
+                    <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Полюбить английский язык с детства</li>
+                        <li>Учить слова через игры и песни</li>
+                        <li>Говорить простые фразы без стеснения</li>
+                    </ul>
+                    <a href="english-for-kids.html" class="course-overview-button">Подробнее о курсе</a>
+                </div>
+
+                 <div class="course-overview-card theme-ielts">
+                    <div class="card-icon"><i class="fas fa-award"></i></div>
+                    <h3>Подготовка к IELTS</h3>
+                    <p class="card-description">Комплексная подготовка ко всем частям экзамена IELTS (Academic & General) с опытными преподавателями.</p>
+                     <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Понимать структуру и ловушки экзамена</li>
+                        <li>Писать эссе и письма на высокий балл</li>
+                        <li>Сдать экзамен с первой попытки</li>
+                    </ul>
+                    <a href="ielts-prep.html" class="course-overview-button">Подробнее о курсе</a>
+                </div>
+
+                <div class="course-overview-card theme-cv">
+                    <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Написание CV</h3>
+                    <p class="card-description">Создайте профессиональное и привлекательное резюме на английском, которое заметят работодатели.</p>
+                     <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Составить резюме по международным стандартам</li>
+                        <li>Правильно описывать свои достижения</li>
+                        <li>Привлечь внимание HR-специалистов</li>
+                    </ul>
+                    <a href="cv-writing.html" class="course-overview-button">Подробнее о курсе</a>
+                </div>
+
+                <div class="course-overview-card theme-essay">
+                    <div class="card-icon"><i class="fas fa-pen-fancy"></i></div>
+                    <h3>Написание сочинений (Essay)</h3>
+                    <p class="card-description">Научитесь писать различные типы эссе на английском языке для учебы или экзаменов.</p>
+                     <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Структурировать свои мысли на письме</li>
+                        <li>Аргументировать свою позицию</li>
+                        <li>Писать академические тексты</li>
+                    </ul>
+                    <a href="essay-writing.html" class="course-overview-button">Подробнее о курсе</a>
+                </div>
+
+                <div class="course-overview-card theme-speaking">
+                    <div class="card-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Разговорный клуб</h3>
+                    <p class="card-description">Неформальное общение на интересные темы для развития беглости речи и уверенности.</p>
+                     <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Преодолеть языковой барьер</li>
+                        <li>Начать говорить бегло и уверенно</li>
+                        <li>Найти друзей для языковой практики</li>
+                    </ul>
+                    <a href="speaking-club.html" class="course-overview-button">Подробнее о курсе</a>
+                </div>
+
+                <div class="course-overview-card theme-foreign">
+                    <div class="card-icon"><i class="fas fa-language"></i></div>
+                    <h3>Русский как иностранный</h3>
+                    <p class="card-description">Курсы русского языка для иностранцев всех уровней, от базового до продвинутого.</p>
+                    <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Говорить на одном из самых богатых языков мира</li>
+                        <li>Понимать русскую культуру и менталитет</li>
+                        <li>Читать русскую литературу в оригинале</li>
+                    </ul>
+                    <a href="russian-as-foreign.html" class="course-overview-button">Подробнее о курсе</a>
+                </div>
+
+                 <div class="course-overview-card theme-foreign">
+                    <div class="card-icon"><i class="fas fa-flag"></i></div>
+                    <h3>Курсы турецкого языка</h3>
+                    <p class="card-description">Изучение турецкого языка с нуля или для продолжающих. Культура и общение.</p>
+                    <ul class="outcomes-list">
+                        <li><strong>Что вы сможете делать:</strong></li>
+                        <li>Свободно путешествовать по Турции</li>
+                        <li>Понимать турецкие сериалы без субтитров</li>
+                        <li>Общаться с местными жителями</li>
+                    </ul>
+                    <a href="turkish-courses.html" class="course-overview-button">Подробнее о курсе</a>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <div class="program-section">
-                <h3>СПЕЦИАЛИЗИРОВАННЫЕ ИНТЕНСИВЫ</h3>
-                <div class="cards-container">
-                    <div class="course-card">
-                      <h4>Интенсив "THE LAUNCHPAD" (Старт)</h4>
-                      <p class="description">Для тех, кто в начале пути. Создаем прочный фундамент и уверенность, чтобы вы могли говорить простыми фразами без страха и сомнений.</p>
-                      <div class="tag">Быстрый старт с нуля до А2</div>
-                      <a href="#link-to-launchpad-details" class="button-secondary">Смотреть программу</a>
-                    </div>
-                    <div class="course-card">
-                      <h4>Интенсив "THE NOMAD" (Свобода)</h4>
-                      <p class="description">Практический курс для тех, кто хочет чувствовать себя свободно в любой точке мира. Никакой сухой грамматики — только живые диалоги и ситуации.</p>
-                      <div class="tag">Свободное общение в поездках</div>
-                      <a href="#link-to-nomad-details" class="button-secondary">Смотреть программу</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="program-section">
-                <h3>ДЛЯ САМОСТОЯТЕЛЬНОГО РАЗВИТИЯ</h3>
-                <div class="cards-container single-card-container">
-                    <div class="course-card">
-                      <div class="card-icon">🔑</div>
-                      <h4>База знаний "THE KNOWLEDGE VAULT"</h4>
-                      <p class="description">Ваш пожизненный доступ к "мозгу" PumpEng. Готовая система знаний, скриптов и материалов для тех, кто готов идти к цели самостоятельно.</p>
-                      <div class="tag">Пожизненный доступ</div>
-                      <a href="#link-to-vault-details" class="button-secondary">Получить доступ</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="outcomes-section">
-        <div class="container">
-            <h3 class="section-title">Каждая программа — это ключ к новой реальности</h3>
-            <div class="outcomes-grid">
-                <div class="outcome-card">
-                    <h4>Карьера без границ</h4>
-                    <p>Уверенно проходите собеседования, управляйте командами и выступайте на международной арене.</p>
-                </div>
-                <div class="outcome-card">
-                    <h4>Свобода путешествий</h4>
-                    <p>Чувствуйте себя как дома в любой стране, легко общаясь на бытовые и глубокие темы.</p>
-                </div>
-                <div class="outcome-card">
-                    <h4>Глубокое понимание</h4>
-                    <p>Потребляйте контент (фильмы, книги, подкасты) в оригинале, улавливая все нюансы и культурный код.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="final-cta">
-        <div class="container">
-            <h3>Не уверены, какая система вам подходит?</h3>
-            <p>Пройдите бесплатную диагностику с нашим экспертом. Мы определим ваш текущий уровень, поймем ваши цели и подберем идеальную программу для вашего роста.</p>
-            <a href="https://wa.me/905349158568?text=Здравствуйте,%20хочу%20пройти%20бесплатную%20диагностику%20для%20подбора%20программы" class="btn btn-primary" target="_blank">Пройти бесплатную диагностику</a>
-        </div>
-    </section>
-   </main>
-
-    <footer>
-        <!-- Подвал -->
-    </footer>
+    <footer><!-- Подвал --></footer>
     <button id="scrollToTopBtn" title="Наверх"><i class="fas fa-arrow-up"></i></button>
     <script src="script.js"></script>
 </body>
