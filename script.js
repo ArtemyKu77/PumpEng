@@ -1,28 +1,4 @@
-// script.js (Новая версия с нуля)
-
-/**
- * Функция для загрузки HTML-контента в указанный контейнер.
- * @param {string} containerId - ID элемента, куда будет загружен HTML.
- * @param {string} filePath - Путь к HTML-файлу.
- */
-async function loadComponent(containerId, filePath) {
-    try {
-        const response = await fetch(filePath);
-        if (!response.ok) {
-            throw new Error(`Ошибка загрузки: ${response.statusText}`);
-        }
-        const html = await response.text();
-        const element = document.getElementById(containerId);
-        
-        if (element) {
-            element.innerHTML = html;
-            // После успешной загрузки HTML, запускаем все скрипты, которые с ним работают
-            initializePageScripts();
-        }
-    } catch (error) {
-        console.error(`Не удалось загрузить компонент из ${filePath}:`, error);
-    }
-}
+// script.js (Финальная, упрощенная версия)
 
 /**
  * Инициализирует все интерактивные элементы на странице.
@@ -55,9 +31,23 @@ function setupCounters() {
                     current += increment;
                     if (current >= goal) {
                         clearInterval(timer);
-                        counter.textContent = counter.textContent.includes('%') ? `${goal}%` : (counter.textContent.includes('+') ? `+${goal}`: goal);
+                        // Форматируем финальное значение
+                        if (counter.textContent.includes('%')) {
+                            counter.textContent = `${goal}%`;
+                        } else if (counter.textContent.includes('+')) {
+                            counter.textContent = `+${goal}`;
+                        } else {
+                            counter.textContent = goal;
+                        }
                     } else {
-                         counter.textContent = counter.textContent.includes('%') ? `${current}%` : (counter.textContent.includes('+') ? `+${current}`: current);
+                        // Форматируем промежуточное значение
+                        if (counter.textContent.includes('%')) {
+                            counter.textContent = `${current}%`;
+                        } else if (counter.textContent.includes('+')) {
+                            counter.textContent = `+${current}`;
+                        } else {
+                            counter.textContent = current;
+                        }
                     }
                 }, 20);
                 
@@ -80,6 +70,8 @@ function setupTestimonialsSlider() {
     if (!wrapper || !prevBtn || !nextBtn) return;
 
     const slides = document.querySelectorAll('.testimonial-card');
+    if (slides.length === 0) return;
+
     let currentIndex = 0;
     let autoSlideInterval;
 
@@ -98,7 +90,10 @@ function setupTestimonialsSlider() {
     };
     
     const startAutoSlide = () => {
-        autoSlideInterval = setInterval(nextSlide, 5000); // 5 секунд
+        // Запускаем автопрокрутку только если слайдов больше одного
+        if (slides.length > 1) {
+            autoSlideInterval = setInterval(nextSlide, 5000); // 5 секунд
+        }
     };
 
     const stopAutoSlide = () => {
@@ -125,7 +120,7 @@ function setupTestimonialsSlider() {
 
 
 // === ГЛАВНЫЙ ЗАПУСК ===
-// Когда DOM-структура готова, начинаем загрузку основного контента.
+// Когда DOM-структура полностью готова, запускаем скрипты.
 document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('main-content', 'main.html');
+    initializePageScripts();
 });
