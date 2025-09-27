@@ -1,6 +1,6 @@
 /* new-main-page.css (Финальная версия с исправлением сдвига) */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display.swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 
 /* === ОСНОВНЫЕ ПЕРЕМЕННЫЕ И СТИЛИ === */
 :root {
@@ -15,8 +15,10 @@
     --border-radius-small: 12px;
 }
 
-html {
-    overflow-x: hidden; /* ГЛАВНОЕ ИСПРАВЛЕНИЕ №1: Запрещаем горизонтальный скролл на уровне всей страницы */
+/* === ГЛАВНОЕ ИСПРАВЛЕНИЕ: Обертка для сайта === */
+.site-wrapper {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -28,6 +30,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* ... (весь остальной CSS код остается без изменений) ... */
+
 .container {
     max-width: 1200px;
     margin-left: auto;
@@ -35,11 +39,8 @@ body {
     padding-left: 24px;
     padding-right: 24px;
 }
-
 section { padding: 60px 0; }
 h1, h2, h3, h4, p { margin: 0; }
-
-/* === СТИЛИ КНОПОК === */
 .btn {
     padding: 10px 24px; border-radius: 50px;
     text-decoration: none; font-weight: 500;
@@ -49,8 +50,6 @@ h1, h2, h3, h4, p { margin: 0; }
 .btn-primary { background-color: var(--color-accent-blue); color: #fff; }
 .btn-secondary { border: 1px solid #ddd; color: var(--color-text); font-size: 14px; padding: 6px 16px;}
 .btn-dark { background-color: #000; color: #fff; display: inline-flex; align-items: center; gap: 8px;}
-
-/* === ШАПКА И МЕНЮ === */
 .new-header { padding: 24px 0; }
 .header-container { display: flex; justify-content: flex-end; align-items: center; }
 .header-actions { display: flex; align-items: center; gap: 20px; }
@@ -80,8 +79,6 @@ h1, h2, h3, h4, p { margin: 0; }
     transition: background-color 0.2s ease;
 }
 .dropdown-menu li a:hover { background-color: var(--color-light-grey-bg); }
-
-/* === СЕКЦИЯ HERO === */
 .hero-title { font-size: 80px; font-weight: 800; line-height: 1.1; margin-bottom: 40px; }
 .gradient-text { background: linear-gradient(90deg, #4f46e5, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .hero-image-wrapper { position: relative; max-width: 1000px; margin: 0 auto; }
@@ -92,14 +89,10 @@ h1, h2, h3, h4, p { margin: 0; }
     display: flex; align-items: center; justify-content: center;
     font-size: 24px; color: #fff; background-color: var(--color-accent-blue);
 }
-
-/* === СЕКЦИЯ INTRO & TEXT BLOCK === */
 .text-block { max-width: 700px; margin: 0 auto; text-align: center; }
 .intro-section { padding-top: 100px; }
 .text-block h3 { font-size: 16px; font-weight: 500; margin-bottom: 16px; color: var(--color-text-muted); }
 .text-block p { font-size: 24px; line-height: 1.5; }
-
-/* === СЕКЦИЯ СТАТИСТИКИ === */
 .stats-section { background-color: var(--color-dark-bg); color: #fff; }
 .stats-container { display: flex; justify-content: space-between; align-items: center; gap: 40px; }
 .stats-title h2 { font-size: 56px; font-weight: 800; line-height: 1.2; }
@@ -109,8 +102,6 @@ h1, h2, h3, h4, p { margin: 0; }
 .stat-item:last-child { border-bottom: none; }
 .stat-number { font-size: 24px; font-weight: 700; }
 .stat-label { font-size: 14px; color: var(--color-text-muted); }
-
-/* === СЕКЦИЯ КУРСОВ === */
 .courses-section .text-block { margin-bottom: 60px; }
 .courses-section .text-block p { font-size: 16px; color: var(--color-text-muted); }
 .course-item { display: flex; gap: 40px; align-items: center; margin-bottom: 40px; }
@@ -122,8 +113,6 @@ h1, h2, h3, h4, p { margin: 0; }
 .course-details h4 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
 .course-details p { font-size: 16px; color: var(--color-text-muted); margin-bottom: 24px; }
 .course-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-
-/* === СЕКЦИЯ ОТЗЫВОВ === */
 .testimonials-section { background-color: #fff; }
 .section-title { font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 40px; }
 .testimonial-slider-container { display: flex; align-items: center; justify-content: center; gap: 20px; }
@@ -133,8 +122,6 @@ h1, h2, h3, h4, p { margin: 0; }
 .testimonial-card { flex: 0 0 100%; box-sizing: border-box; padding: 20px; background-color: var(--color-light-grey-bg); border-radius: var(--border-radius-main); }
 .testimonial-card p { font-size: 18px; line-height: 1.6; margin-bottom: 16px; }
 .author { font-weight: 700; }
-
-/* === СЕКЦИЯ КОМАНДЫ === */
 .team-section { background-color: var(--color-dark-bg); color: #fff; }
 .team-container { display: flex; gap: 40px; align-items: center; }
 .team-description { flex-basis: 40%; }
@@ -155,24 +142,18 @@ h1, h2, h3, h4, p { margin: 0; }
 .team-member p { font-weight: 500; }
 .team-member span { font-size: 14px; color: var(--color-text-muted); }
 .view-all-btn { display: block; width: 100%; text-align: center; padding: 16px; border: 1px solid #333; border-radius: var(--border-radius-small); margin-top: 40px; text-decoration: none; color: #fff; font-weight: 500; }
-
-/* === ФИНАЛЬНАЯ СЕКЦИЯ CTA === */
 .cta-section { background-color: var(--color-accent-cyan); padding-bottom: 0; }
 .cta-container { display: flex; justify-content: space-between; align-items: center; }
 .cta-text h2 { font-size: 80px; font-weight: 800; line-height: 1.1; }
 .cta-actions { text-align: right; }
 .social-links { display: flex; gap: 20px; justify-content: flex-end; margin-top: 20px; }
 .social-links a { color: #000; text-decoration: none; font-weight: 500; }
-
-/* === ПОДВАЛ === */
 .new-footer { padding: 40px 0; background-color: var(--color-accent-cyan); border-top: 1px solid #000; }
 .footer-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .footer-brand { font-weight: 800; font-size: 24px; }
 .footer-nav { display: flex; gap: 20px; }
 .footer-nav a { text-decoration: none; color: var(--color-text); }
 .copyright-container { text-align: center; color: var(--color-text-muted); font-size: 14px; }
-
-/* === КНОПКА НАВЕРХ === */
 #scrollToTopBtn {
     display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99;
     border: none; outline: none; background-color: var(--color-accent-blue);
@@ -182,13 +163,7 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 #scrollToTopBtn:hover { opacity: 1; }
 
-
-/* ========================================================== */
-/* === АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (Экраны до 768px) === */
-/* ========================================================== */
 @media (max-width: 768px) {
-
-    /* Уменьшаем общие отступы */
     .container {
         padding-left: 16px;
         padding-right: 16px;
@@ -196,34 +171,24 @@ h1, h2, h3, h4, p { margin: 0; }
     section {
         padding: 40px 0;
     }
-
-    /* Уменьшаем гигантские шрифты */
     .hero-title { font-size: 48px; }
     .intro-section .text-block p { font-size: 18px; }
     .stats-title h2 { font-size: 40px; }
     .cta-text h2 { font-size: 48px; }
-
-    /* ГЛАВНОЕ ИСПРАВЛЕНИЕ №2: Возвращаем стрелку внутрь экрана */
     .arrow-down-link { 
         right: 16px; 
         bottom: 16px;
     }
-
-    /* Статистика: ставим блоки друг под друга */
     .stats-container {
         flex-direction: column;
         gap: 30px;
         text-align: center;
     }
     .stats-data { text-align: left; width: 100%;}
-
-    /* Курсы: ставим блоки друг под друга */
     .course-item,
     .course-item:nth-child(odd) {
         flex-direction: column !important;
     }
-
-    /* Команда: ставим блоки друг под друга */
     .team-container {
         flex-direction: column;
         gap: 30px;
@@ -232,11 +197,7 @@ h1, h2, h3, h4, p { margin: 0; }
         grid-template-columns: repeat(2, 1fr);
     }
     .team-description h3 { font-size: 28px; }
-
-    /* Отзывы: делаем стрелки поменьше */
     .slider-arrow { width: 40px; height: 40px; }
-
-    /* CTA: ставим блоки друг под друга */
     .cta-container {
         flex-direction: column;
         text-align: center;
@@ -244,8 +205,6 @@ h1, h2, h3, h4, p { margin: 0; }
     }
     .cta-actions { text-align: center; }
     .social-links { justify-content: center; }
-
-    /* Подвал: ставим блоки друг под друга */
     .footer-container, .footer-nav {
         flex-direction: column;
         text-align: center;
