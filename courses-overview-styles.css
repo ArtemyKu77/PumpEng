@@ -1,4 +1,5 @@
 /* courses-overview-styles.css (Интегрированная версия) */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 #courses-hero {
     background: linear-gradient(rgba(0, 60, 140, 0.85), rgba(0, 40, 100, 0.9));
@@ -16,13 +17,27 @@
     gap: 25px; max-width: 1200px; margin: 0 auto; padding: 0 20px;
 }
 
-/* ЗАГОЛОВКИ ВНУТРИ СЕТКИ */
+/* ОБЫЧНЫЕ ЗАГОЛОВКИ ВНУТРИ СЕТКИ */
 .program-section-title {
     grid-column: 1 / -1; font-size: 1.2em; font-weight: bold;
     color: #888; letter-spacing: 1.5px; text-transform: uppercase;
     margin-bottom: 10px; margin-top: 20px; text-align: center;
 }
 .program-section-title:first-of-type { margin-top: 0; }
+
+/* === НОВЫЙ СТИЛЬ: ЗАГОЛОВОК "ДЛЯ ПРЕДПРИИМЧИВЫХ" === */
+.premium-section-title {
+    grid-column: 1 / -1; /* Занимает всю ширину */
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4em; /* Крупный шрифт */
+    color: #fff;
+    background: linear-gradient(90deg, #a855f7, #4f46e5); /* Градиентный фон */
+    padding: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 12px;
+}
 
 /* ОБЩИЕ СТИЛИ КАРТОЧЕК */
 .course-overview-card {
@@ -47,13 +62,10 @@
 /* ГРАДИЕНТНЫЙ ТЕКСТ ДЛЯ ЗАГОЛОВКОВ */
 .gradient-text {
     background: linear-gradient(90deg, #4f46e5, #a855f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 
-/* СТАРЫЕ ЦВЕТОВЫЕ ТЕМЫ */
+/* ... (все остальные стили без изменений) ... */
 .course-overview-card.theme-business { border-left-color: #2c3e50; }
 .course-overview-card.theme-business .card-icon { color: #2c3e50; }
 .course-overview-card.theme-travel { border-left-color: #2980b9; }
@@ -80,38 +92,25 @@
 .course-overview-card.theme-speaking .card-icon { color: #e67e22; }
 .course-overview-card.theme-foreign { border-left-color: #bdc3c7; }
 .course-overview-card.theme-foreign .card-icon { color: #7f8c8d; }
-
-/* ЭЛЕМЕНТЫ ВНУТРИ КАРТОЧЕК */
 .course-overview-card .card-icon { font-size: 2.8em; margin-bottom: 15px; }
 .course-overview-card h3, .course-overview-card h4 { font-size: 1.5em; margin-bottom: 8px; color: #333; }
 .course-overview-card .card-subtitle { font-size: 0.95em; color: #777; margin-bottom: 15px; font-style: italic; }
 .course-overview-card .card-description { font-size: 0.95em; color: #555; line-height: 1.5; margin-bottom: 20px; flex-grow: 1; }
 .course-overview-card.premium .card-description,
 .course-overview-card.premium .card-subtitle { text-align: left; }
-
-/* ПРОДАЮЩИЙ СПИСОК */
 .outcomes-list {
     list-style: none; padding-left: 0; text-align: left;
     margin-top: 15px; margin-bottom: 20px; font-size: 0.9em; color: #333;
     flex-grow: 1;
 }
-.outcomes-list li {
-    position: relative; padding-left: 22px; margin-bottom: 8px;
-}
-.outcomes-list li::before {
-    content: '✓'; color: #27ae60; position: absolute; left: 0;
-    font-weight: bold; font-size: 1.1em;
-}
+.outcomes-list li { position: relative; padding-left: 22px; margin-bottom: 8px; }
+.outcomes-list li::before { content: '✓'; color: #27ae60; position: absolute; left: 0; font-weight: bold; font-size: 1.1em; }
 .outcomes-list li strong { display: block; margin-bottom: 5px; color: #000; }
-
-/* ТЕГИ */
 .course-overview-card .tag {
     display: inline-block; background-color: #f3f4f6; color: #4b5563;
     font-size: 0.8em; font-weight: 500; padding: 5px 12px;
     border-radius: 50px; margin-bottom: 25px; align-self: flex-start;
 }
-
-/* СТАРЫЕ КНОПКИ */
 .course-overview-button {
     display: inline-block; padding: 10px 22px; font-size: 0.95em; font-weight: bold;
     color: #fff; background-color: #0056b3; text-decoration: none;
@@ -119,8 +118,6 @@
     align-self: center; margin-top: auto;
 }
 .course-overview-button:hover { background-color: #00428a; transform: scale(1.03); }
-
-/* НОВЫЕ КНОПКИ */
 .button-primary, .button-secondary {
     display: block; width: 100%; text-align: center; padding: 14px 20px;
     border-radius: 12px; text-decoration: none; font-weight: 700;
@@ -131,10 +128,10 @@
 .button-secondary { background-color: #f3f4f6; color: #111827; }
 .button-secondary:hover { background-color: #e5e7eb; transform: scale(1.03); }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     #courses-hero .hero-content h1 { font-size: 2em; }
     #courses-hero .hero-content p { font-size: 1.05em; }
     .course-cards-container { grid-template-columns: 1fr; }
     .course-overview-card h3, .course-overview-card h4 { font-size: 1.3em; }
+    .premium-section-title { font-size: 3em; } /* Уменьшаем шрифт на мобильных */
 }
