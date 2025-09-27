@@ -1,4 +1,4 @@
-// script.js (Финальная, упрощенная версия)
+/* script.js (Финальная, упрощенная версия) */
 
 /**
  * Инициализирует все интерактивные элементы на странице.
@@ -21,7 +21,7 @@ function setupCounters() {
                 const counter = entry.target;
                 const goal = parseInt(counter.dataset.goal, 10);
                 
-                if (counter.animated) return; // Предотвращаем повторную анимацию
+                if (counter.animated) return;
                 counter.animated = true;
                 
                 let current = 0;
@@ -31,7 +31,6 @@ function setupCounters() {
                     current += increment;
                     if (current >= goal) {
                         clearInterval(timer);
-                        // Форматируем финальное значение
                         if (counter.textContent.includes('%')) {
                             counter.textContent = `${goal}%`;
                         } else if (counter.textContent.includes('+')) {
@@ -40,7 +39,6 @@ function setupCounters() {
                             counter.textContent = goal;
                         }
                     } else {
-                        // Форматируем промежуточное значение
                         if (counter.textContent.includes('%')) {
                             counter.textContent = `${current}%`;
                         } else if (counter.textContent.includes('+')) {
@@ -90,9 +88,8 @@ function setupTestimonialsSlider() {
     };
     
     const startAutoSlide = () => {
-        // Запускаем автопрокрутку только если слайдов больше одного
         if (slides.length > 1) {
-            autoSlideInterval = setInterval(nextSlide, 5000); // 5 секунд
+            autoSlideInterval = setInterval(nextSlide, 5000);
         }
     };
 
@@ -120,7 +117,6 @@ function setupTestimonialsSlider() {
 
 
 // === ГЛАВНЫЙ ЗАПУСК ===
-// Когда DOM-структура полностью готова, запускаем скрипты.
 document.addEventListener('DOMContentLoaded', () => {
     initializePageScripts();
-});
+});```
