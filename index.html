@@ -3,54 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PumpEng - Языковой коучинг для лидеров и экспертов</title>
-    <meta name="description" content="PumpEng – первая в СНГ система языкового коучинга, которая строит не словарный запас, а ваше мышление и статус.">
+    <title>PumpEng - Языковой коучинг</title>
+    <meta name="description" content="PumpEng – система языкового коучинга, которая строит ваше мышление и статус.">
     
-    <!-- Стили для ДРУГИХ страниц сайта (оставляем для совместимости) -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Подключаем только НОВЫЙ файл стилей -->
+    <link rel="stylesheet" href="new-main-page.css">
     
-    <!-- Иконки Font Awesome (нужны для нового дизайна) -->
+    <!-- Иконки (нужны для стрелочек) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- ИЗМЕНЕНО: Подключаем ЕДИНСТВЕННЫЙ новый файл стилей -->
-    <link rel="stylesheet" href="style-v2.css">
 </head>
-<body class="new-design">
+<body>
 
-    <!-- Этот контейнер будет заполнен содержимым из main-v2.html -->
+    <!-- Сюда будет загружен HTML-код вашей новой страницы -->
     <div id="main-content"></div>
     
-    <!-- ИЗМЕНЕНО: Новый, надежный способ загрузки -->
-    <script>
-        // Эта функция загружает HTML-код новой главной страницы в контейнер выше
-        async function loadMainPage(containerId, filePath) {
-            try {
-                const response = await fetch(filePath);
-                if (!response.ok) {
-                    throw new Error(`Ошибка загрузки: ${response.statusText}`);
-                }
-                const html = await response.text();
-                const element = document.getElementById(containerId);
-                
-                if (element) {
-                    element.innerHTML = html;
-                    
-                    // ШАГ 2: Только ПОСЛЕ загрузки HTML, мы подключаем скрипт для него.
-                    // Это гарантирует, что скрипт найдет все нужные ему элементы.
-                    const script = document.createElement('script');
-                    script.src = 'script-v2.js'; // Подключаем новый, исправленный скрипт
-                    document.body.appendChild(script);
-                }
-            } catch (error) {
-                console.error('Не удалось загрузить компонент главной страницы:', error);
-            }
-        }
-
-        // Запускаем загрузку при старте страницы
-        document.addEventListener('DOMContentLoaded', () => {
-            loadMainPage('main-content', 'main-v2.html'); // Загружаем новый, исправленный HTML
-        });
-    </script>
+    <!-- Скрипт для загрузки контента и запуска функционала -->
+    <script src="script.js"></script>
 
 </body>
 </html>
