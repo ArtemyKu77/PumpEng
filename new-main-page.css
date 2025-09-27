@@ -1,4 +1,4 @@
-/* new-main-page.css (Финальная версия под макет) */
+/* new-main-page.css (Финальная версия с мобильной адаптацией) */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 
@@ -46,7 +46,7 @@ h1, h2, h3, h4, p { margin: 0; }
 .btn-secondary { border: 1px solid #ddd; color: var(--color-text); font-size: 14px; padding: 6px 16px;}
 .btn-dark { background-color: #000; color: #fff; display: inline-flex; align-items: center; gap: 8px;}
 
-/* === ШАПКА И НОВОЕ МЕНЮ === */
+/* === ШАПКА И МЕНЮ === */
 .new-header { padding: 24px 0; }
 .header-container { display: flex; justify-content: flex-end; align-items: center; }
 .header-actions { display: flex; align-items: center; gap: 20px; }
@@ -177,3 +177,71 @@ h1, h2, h3, h4, p { margin: 0; }
     transition: background-color 0.3s, opacity 0.3s; opacity: 0.8;
 }
 #scrollToTopBtn:hover { opacity: 1; }
+
+
+/* ========================================================== */
+/* === АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (Экраны до 768px) === */
+/* ========================================================== */
+@media (max-width: 768px) {
+
+    /* Уменьшаем общие отступы */
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    section {
+        padding: 40px 0;
+    }
+
+    /* Уменьшаем гигантские шрифты */
+    .hero-title { font-size: 48px; }
+    .intro-section .text-block p { font-size: 18px; }
+    .stats-title h2 { font-size: 40px; }
+    .cta-text h2 { font-size: 48px; }
+
+    /* Hero: прячем стрелку, которая уезжает за экран */
+    .arrow-down-link { right: 10px; bottom: 10px; }
+
+    /* Статистика: ставим блоки друг под друга */
+    .stats-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    .stats-data { text-align: left; width: 100%;}
+
+    /* Курсы: ставим блоки друг под друга */
+    .course-item,
+    .course-item:nth-child(odd) { /* !important нужен чтобы перебить правило для нечетных */
+        flex-direction: column !important;
+    }
+
+    /* Команда: ставим блоки друг под друга */
+    .team-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки вместо 3 */
+    }
+    .team-description h3 { font-size: 28px; }
+
+    /* Отзывы: делаем стрелки поменьше */
+    .slider-arrow { width: 40px; height: 40px; }
+
+    /* CTA: ставим блоки друг под друга */
+    .cta-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .cta-actions { text-align: center; }
+    .social-links { justify-content: center; }
+
+    /* Подвал: ставим блоки друг под друга */
+    .footer-container, .footer-nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
