@@ -119,4 +119,4 @@ function setupTestimonialsSlider() {
 // === ГЛАВНЫЙ ЗАПУСК ===
 document.addEventListener('DOMContentLoaded', () => {
     initializePageScripts();
-});```
+});
