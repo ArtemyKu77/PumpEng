@@ -1,4 +1,4 @@
-/* new-main-page.css (Финальная версия с мобильной адаптацией) */
+/* new-main-page.css (Финальная версия с исправлением сдвига) */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 
@@ -15,6 +15,10 @@
     --border-radius-small: 12px;
 }
 
+html {
+    overflow-x: hidden; /* ГЛАВНОЕ ИСПРАВЛЕНИЕ №1: Запрещаем горизонтальный скролл на уровне всей страницы */
+}
+
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -22,7 +26,6 @@ body {
     color: var(--color-text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden; /* <-- ИСПРАВЛЕНИЕ: Эта строка убирает горизонтальный сдвиг */
 }
 
 .container {
@@ -200,8 +203,11 @@ h1, h2, h3, h4, p { margin: 0; }
     .stats-title h2 { font-size: 40px; }
     .cta-text h2 { font-size: 48px; }
 
-    /* Hero: прячем стрелку, которая уезжает за экран */
-    .arrow-down-link { right: 10px; bottom: 10px; }
+    /* ГЛАВНОЕ ИСПРАВЛЕНИЕ №2: Возвращаем стрелку внутрь экрана */
+    .arrow-down-link { 
+        right: 16px; 
+        bottom: 16px;
+    }
 
     /* Статистика: ставим блоки друг под друга */
     .stats-container {
