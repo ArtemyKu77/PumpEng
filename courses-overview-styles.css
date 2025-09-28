@@ -1,137 +1,64 @@
-/* courses-overview-styles.css (Интегрированная версия) */
+/* courses-overview-styles.css (Финальная версия под макет) */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-#courses-hero {
-    background: linear-gradient(rgba(0, 60, 140, 0.85), rgba(0, 40, 100, 0.9));
-    color: white; padding: 50px 20px; text-align: center;
-    margin-bottom: 0; width: 100%; max-width: none;
-}
+#courses-hero { background: linear-gradient(rgba(0, 60, 140, 0.85), rgba(0, 40, 100, 0.9)); color: white; padding: 50px 20px; text-align: center; margin-bottom: 0; width: 100%; max-width: none; }
 #courses-hero .hero-content h1 { font-size: 2.6em; margin-bottom: 15px; color: #f0a500; }
 #courses-hero .hero-content p { font-size: 1.15em; max-width: 750px; margin: 0 auto 15px auto; line-height: 1.6; }
 
 #courses-list { padding-top: 40px; padding-bottom: 50px; background-color: #f8f9fa; }
+.course-cards-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-.course-cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px; max-width: 1200px; margin: 0 auto; padding: 0 20px;
-}
-
-/* ОБЫЧНЫЕ ЗАГОЛОВКИ ВНУТРИ СЕТКИ */
-.program-section-title {
-    grid-column: 1 / -1; font-size: 1.2em; font-weight: bold;
-    color: #888; letter-spacing: 1.5px; text-transform: uppercase;
-    margin-bottom: 10px; margin-top: 20px; text-align: center;
-}
-.program-section-title:first-of-type { margin-top: 0; }
-
-/* === НОВЫЙ СТИЛЬ: ЗАГОЛОВОК "ДЛЯ ПРЕДПРИИМЧИВЫХ" === */
 .premium-section-title {
-    grid-column: 1 / -1; /* Занимает всю ширину */
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 4em; /* Крупный шрифт */
-    color: #fff;
-    background: linear-gradient(90deg, #a855f7, #4f46e5); /* Градиентный фон */
-    padding: 20px;
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-align: center;
-    border-radius: 12px;
+    grid-column: 1 / -1; font-family: 'Bebas Neue', sans-serif; font-size: 4em;
+    color: #fff; background: linear-gradient(90deg, #a855f7, #4f46e5);
+    padding: 20px; margin: 0 0 10px 0; text-align: center; border-radius: 12px;
 }
+.program-section-title { grid-column: 1 / -1; font-size: 1.2em; font-weight: bold; color: #888; letter-spacing: 1.5px; text-transform: uppercase; margin: 20px 0 10px 0; text-align: center; }
 
-/* ОБЩИЕ СТИЛИ КАРТОЧЕК */
-.course-overview-card {
-    background-color: #ffffff; border-radius: 10px; padding: 25px;
-    text-align: center; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; flex-direction: column;
-    border-left: 6px solid transparent;
-}
+.course-overview-card { background-color: #ffffff; border-radius: 10px; padding: 25px; text-align: center; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; border-left: 6px solid transparent; }
 .course-overview-card:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); }
 
-/* ПРЕМИУМ КАРТОЧКИ */
 .course-overview-card.premium {
-    border: 2px solid transparent; border-left-width: 2px;
+    padding: 40px; border: 2px solid transparent; border-left-width: 2px;
     background-image: linear-gradient(white, white), linear-gradient(to right, #4f46e5, #a855f7);
     background-origin: border-box; background-clip: padding-box, border-box;
-    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.1);
-    text-align: left; padding: 30px;
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.1); text-align: left;
 }
-.course-overview-card.premium .card-icon { text-align: left; }
+.cards-container > .course-overview-card.premium { grid-column: span 2; } /* Заставляем премиум карточки занимать 2 колонки */
+.premium-cards-wrapper { display: flex; justify-content: center; gap: 30px; grid-column: 1 / -1; flex-wrap: wrap; }
+.premium-cards-wrapper .course-overview-card.premium { max-width: 540px; }
 
-/* ГРАДИЕНТНЫЙ ТЕКСТ ДЛЯ ЗАГОЛОВКОВ */
-.gradient-text {
-    background: linear-gradient(90deg, #4f46e5, #a855f7);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-
-/* ... (все остальные стили без изменений) ... */
-.course-overview-card.theme-business { border-left-color: #2c3e50; }
-.course-overview-card.theme-business .card-icon { color: #2c3e50; }
-.course-overview-card.theme-travel { border-left-color: #2980b9; }
-.course-overview-card.theme-travel .card-icon { color: #2980b9; }
-.course-overview-card.theme-beginner { border-left-color: #27ae60; }
-.course-overview-card.theme-beginner .card-icon { color: #27ae60; }
-.course-overview-card.theme-presentations { border-left-color: #8e44ad; }
-.course-overview-card.theme-presentations .card-icon { color: #8e44ad; }
-.course-overview-card.theme-advanced { border-left-color: #d35400; }
-.course-overview-card.theme-advanced .card-icon { color: #d35400; }
-.course-overview-card.theme-levels { border-left-color: #7f8c8d; }
-.course-overview-card.theme-levels .card-icon { color: #7f8c8d; }
-.course-overview-card.theme-professional { border-left-color: #16a085; }
-.course-overview-card.theme-professional .card-icon { color: #16a085; }
-.course-overview-card.theme-kids { border-left-color: #f39c12; }
-.course-overview-card.theme-kids .card-icon { color: #f39c12; }
-.course-overview-card.theme-ielts { border-left-color: #c0392b; }
-.course-overview-card.theme-ielts .card-icon { color: #c0392b; }
-.course-overview-card.theme-cv { border-left-color: #34495e; }
-.course-overview-card.theme-cv .card-icon { color: #34495e; }
-.course-overview-card.theme-essay { border-left-color: #9b59b6; }
-.course-overview-card.theme-essay .card-icon { color: #9b59b6; }
-.course-overview-card.theme-speaking { border-left-color: #e67e22; }
-.course-overview-card.theme-speaking .card-icon { color: #e67e22; }
-.course-overview-card.theme-foreign { border-left-color: #bdc3c7; }
-.course-overview-card.theme-foreign .card-icon { color: #7f8c8d; }
-.course-overview-card .card-icon { font-size: 2.8em; margin-bottom: 15px; }
+.gradient-text { background: linear-gradient(90deg, #4f46e5, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.course-overview-card .card-icon { font-size: 2.8em; margin-bottom: 15px; text-align: left; }
 .course-overview-card h3, .course-overview-card h4 { font-size: 1.5em; margin-bottom: 8px; color: #333; }
-.course-overview-card .card-subtitle { font-size: 0.95em; color: #777; margin-bottom: 15px; font-style: italic; }
-.course-overview-card .card-description { font-size: 0.95em; color: #555; line-height: 1.5; margin-bottom: 20px; flex-grow: 1; }
-.course-overview-card.premium .card-description,
-.course-overview-card.premium .card-subtitle { text-align: left; }
-.outcomes-list {
-    list-style: none; padding-left: 0; text-align: left;
-    margin-top: 15px; margin-bottom: 20px; font-size: 0.9em; color: #333;
-    flex-grow: 1;
-}
+.course-overview-card .card-description { font-size: 0.95em; color: #555; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; text-align: left; }
+
+.price { font-size: 2.5em; font-weight: 800; margin-bottom: 15px; color: #000; text-align: left; }
+.outcomes-list { list-style: none; padding-left: 0; text-align: left; margin-top: 15px; margin-bottom: 20px; font-size: 0.9em; color: #333; flex-grow: 1; }
 .outcomes-list li { position: relative; padding-left: 22px; margin-bottom: 8px; }
 .outcomes-list li::before { content: '✓'; color: #27ae60; position: absolute; left: 0; font-weight: bold; font-size: 1.1em; }
 .outcomes-list li strong { display: block; margin-bottom: 5px; color: #000; }
-.course-overview-card .tag {
-    display: inline-block; background-color: #f3f4f6; color: #4b5563;
-    font-size: 0.8em; font-weight: 500; padding: 5px 12px;
-    border-radius: 50px; margin-bottom: 25px; align-self: flex-start;
-}
-.course-overview-button {
-    display: inline-block; padding: 10px 22px; font-size: 0.95em; font-weight: bold;
-    color: #fff; background-color: #0056b3; text-decoration: none;
-    border-radius: 25px; transition: background-color 0.3s ease, transform 0.2s ease;
-    align-self: center; margin-top: auto;
-}
-.course-overview-button:hover { background-color: #00428a; transform: scale(1.03); }
-.button-primary, .button-secondary {
-    display: block; width: 100%; text-align: center; padding: 14px 20px;
-    border-radius: 12px; text-decoration: none; font-weight: 700;
-    transition: transform 0.2s ease, box-shadow 0.2s ease; margin-top: auto;
-}
+.course-overview-card .tag { display: inline-block; background-color: #f3f4f6; color: #4b5563; font-size: 0.8em; font-weight: 500; padding: 5px 12px; border-radius: 50px; margin-bottom: 25px; align-self: flex-start; }
+
+.button-primary, .button-secondary { display: block; width: 100%; text-align: center; padding: 14px 20px; border-radius: 12px; text-decoration: none; font-weight: 700; transition: transform 0.2s ease, box-shadow 0.2s ease; margin-top: auto; }
 .button-primary { background-color: #4f46e5; color: #fff; }
 .button-primary:hover { transform: scale(1.03); box-shadow: 0 8px 15px rgba(79, 70, 229, 0.2); }
 .button-secondary { background-color: #f3f4f6; color: #111827; }
 .button-secondary:hover { background-color: #e5e7eb; transform: scale(1.03); }
 
+/* Обычные карточки курсов (остались для совместимости) */
+.course-overview-card:not(.premium) { text-align: center; }
+.course-overview-card:not(.premium) .card-description { text-align: center; }
+.course-overview-card:not(.premium) .outcomes-list { text-align: left; }
+.course-overview-card:not(.premium) .course-overview-button { display: inline-block; padding: 10px 22px; font-size: 0.95em; font-weight: bold; color: #fff; background-color: #0056b3; text-decoration: none; border-radius: 25px; transition: background-color 0.3s ease, transform 0.2s ease; align-self: center; margin-top: auto; }
+.course-overview-card:not(.premium) .course-overview-button:hover { background-color: #00428a; transform: scale(1.03); }
+
+@media (max-width: 900px) {
+    .premium-cards-wrapper { flex-direction: column; }
+    .cards-container > .course-overview-card.premium { grid-column: span 1; }
+}
 @media (max-width: 768px) {
-    #courses-hero .hero-content h1 { font-size: 2em; }
-    #courses-hero .hero-content p { font-size: 1.05em; }
     .course-cards-container { grid-template-columns: 1fr; }
     .course-overview-card h3, .course-overview-card h4 { font-size: 1.3em; }
-    .premium-section-title { font-size: 3em; } /* Уменьшаем шрифт на мобильных */
+    .premium-section-title { font-size: 3em; }
 }
