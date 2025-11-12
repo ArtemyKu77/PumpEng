@@ -1,4 +1,4 @@
-/* new-main-page.css (Финальная версия под макет) */
+/* new-main-page.css (Финальная версия с фоновыми изображениями для курсов) */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 
@@ -75,13 +75,26 @@ h1, h2, h3, h4, p { margin: 0; }
 .courses-section .text-block p { font-size: 16px; color: var(--color-text-muted); }
 .course-item { display: flex; gap: 40px; align-items: center; margin-bottom: 40px; }
 .course-item:nth-child(odd) { flex-direction: row-reverse; }
-.course-image { flex: 1; height: 300px; background-color: var(--color-light-grey-bg); border-radius: var(--border-radius-main); position: relative; }
+.course-image {
+    flex: 1;
+    height: 300px;
+    background-color: var(--color-light-grey-bg);
+    border-radius: var(--border-radius-main);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .course-image .arrow-link { position: absolute; bottom: 20px; right: 20px; text-decoration: none; }
 .course-image .circle-arrow { background-color: #000; }
 .course-details { flex: 1; text-align: left; }
 .course-details h4 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
 .course-details p { font-size: 16px; color: var(--color-text-muted); margin-bottom: 24px; }
 .course-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+
+#course-newbies { background-image: url('dlya-novichkov.jpg'); }
+#course-travel { background-image: url('dlya-puteshestviy.jpg'); }
+#course-business { background-image: url('dlya-dela.jpg'); }
 
 .testimonials-section { background-color: #fff; }
 .testimonial-slider-container { display: flex; align-items: center; justify-content: center; gap: 20px; }
